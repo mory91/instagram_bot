@@ -1046,6 +1046,7 @@ class InstaBot:
             target = random.choice(self.user_list)
             # ---------------- Following or not ------------------
             target_info = self.get_userdetail_by_name(target.target)
+            print(target_info['followed_by_viewer'])
             if target_info['followed_by_viewer'] == True:
                 # ------------------- Get media_id -------------------
                 if len(self.media_by_user) == 0:
@@ -1055,7 +1056,9 @@ class InstaBot:
                         1, self.max_like_for_one_tag)
                     self.remove_already_liked()
                 # ------------------- Like -------------------
+                print(target.target_action)
                 if "l" in target.target_action:
+                    print("hi")
                     self.new_auto_mod_page_like()
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:
@@ -1071,7 +1074,8 @@ class InstaBot:
                     if target_info["id"] == self.user_id:
                         self.write_log("Keep calm - It's your own profile ;)")
                         return
-                    if check_already_followed(self, user_id=target_info["id"]) == 1:
+                    #toooofff
+                    if target_info['followed_by_viewer'] == True:
                         self.write_log("Already followed before " + target_info["id"])
                         self.next_iteration["Follow"] = time.time() + \
                                                         self.add_time(self.follow_delay/2)
