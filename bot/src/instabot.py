@@ -126,7 +126,7 @@ class InstaBot:
                  login,
                  password,
                  like_per_day=1000,
-                 media_max_like=50,
+                 media_max_like=100000,
                  media_min_like=0,
                  follow_per_day=0,
                  follow_time=5 * 60 * 60,
@@ -1046,7 +1046,6 @@ class InstaBot:
             target = random.choice(self.user_list)
             # ---------------- Following or not ------------------
             target_info = self.get_userdetail_by_name(target.target)
-            print(target_info['followed_by_viewer'])
             if target_info['followed_by_viewer'] == True:
                 # ------------------- Get media_id -------------------
                 if len(self.media_by_user) == 0:
@@ -1056,9 +1055,7 @@ class InstaBot:
                         1, self.max_like_for_one_tag)
                     self.remove_already_liked()
                 # ------------------- Like -------------------
-                print(target.target_action)
                 if "l" in target.target_action:
-                    print("hi")
                     self.new_auto_mod_page_like()
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:

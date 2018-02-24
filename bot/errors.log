@@ -2133,3 +2133,35 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/ssl.py", line 575, in read
     v = self._sslobj.read(len, buffer)
 KeyboardInterrupt
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 411, in get_username_by_user_id
+    r = self.s.get(url_info, headers="")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 640, in follow
+    insert_username(self, user_id=user_id, username=username)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 74, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
