@@ -9,6 +9,8 @@ from src.feed_scanner import feed_scanner
 from src.follow_protocol import follow_protocol
 from src.unfollow_protocol import unfollow_protocol
 
+
+
 import sys
 sys.path.append('../')
 
@@ -25,10 +27,12 @@ from api.models import Reset, Target
 def get_tags():
     tags = []
     tag_objs = Target.objects.filter(target_type='T')
-    for t in tag_objs:
-        tags.append(t.target)
-    return tags
+    return tag_objs
 
+def get_pages():
+    pages = []
+    pages_objs = Target.objects.filter(target_type='P')
+    return pages_objs
 
 last_id = 0
 tags = get_tags()
@@ -38,9 +42,10 @@ bot = InstaBot(
     like_per_day=1000,
     comments_per_day=5,
     tag_list=tags,
+    user_list=['mehrdad89228'],
     user_blacklist={},
     max_like_for_one_tag=50,
-    follow_per_day=300,
+    follow_per_day=3000,
     follow_time=1 * 60,
     unfollow_per_day=300,
     unfollow_break_min=15,
@@ -55,16 +60,16 @@ while(1):
     if last is not None and last.id > last_id:
         last_id = last.id
         tags = get_tags()
-        print(tags)
+        pages = get_pages()
         bot.tag_list = tags
-
-
-    
+        bot.user_list = pages
 
     mode = -1
 
     if mode == -1:
-        bot.new_auto_mod_no_while()
+        bot.new_auto_mod_tag()
+        bot.new_auto_mod_page()
+
     elif mode == 0:
         bot.new_auto_mod()
     elif mode == 1:
