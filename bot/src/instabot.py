@@ -1055,6 +1055,8 @@ class InstaBot:
             target = random.choice(self.user_list)
             # ---------------- Following or not ------------------
             target_info = self.get_userdetail_by_name(target.target)
+            print(target.target)
+            print(target_info)
             if target_info['followed_by_viewer'] == True:
                 # ------------------- Get media_id -------------------
                 if len(self.media_by_user) == 0:
