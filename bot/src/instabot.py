@@ -1057,7 +1057,7 @@ class InstaBot:
             target_info = self.get_userdetail_by_name(target.target)
             print(target.target)
             print(target_info)
-            if target_info['followed_by_viewer'] == True:
+            if target_info and target_info['followed_by_viewer'] == True:
                 # ------------------- Get media_id -------------------
                 if len(self.media_by_user) == 0:
                     self.get_media_id_by_user(target.target)
@@ -1078,7 +1078,7 @@ class InstaBot:
                 if "c" in target.target_action:
                     self.new_auto_mod_page_comments()
             else:
-                if target_info['requested_by_viewer'] == False and time.time() > self.next_iteration["Follow"] and self.follow_per_day != 0:
+                if target_info and target_info['requested_by_viewer'] == False and time.time() > self.next_iteration["Follow"] and self.follow_per_day != 0:
                     if target_info["id"] == self.user_id:
                         self.write_log("Keep calm - It's your own profile ;)")
                         return
