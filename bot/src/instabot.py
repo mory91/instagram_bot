@@ -823,6 +823,8 @@ class InstaBot:
                                                 self.add_time(self.follow_delay)
 
     def new_auto_mod_unfollow(self):
+        print(time.time())
+        print(self.next_iteration["Unfollow"])
         if time.time() > self.next_iteration["Unfollow"] and self.unfollow_per_day != 0:
             if self.bot_mode == 0:
                 log_string = "Trying to unfollow #%i: " % (self.unfollow_counter + 1)

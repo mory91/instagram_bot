@@ -2257,3 +2257,41 @@ Traceback (most recent call last):
   File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.instagram.com', port=443): Max retries exceeded with url: /web/friendships/4075239958/unfollow/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7fa7ae00be10>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 633, in follow
+    follow = self.s.post(url_follow)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
