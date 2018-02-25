@@ -1055,8 +1055,6 @@ class InstaBot:
             target = random.choice(self.user_list)
             # ---------------- Following or not ------------------
             target_info = self.get_userdetail_by_name(target.target)
-            print(target.target)
-            print(target_info)
             if target_info and target_info['followed_by_viewer'] == True:
                 # ------------------- Get media_id -------------------
                 if len(self.media_by_user) == 0:
@@ -1064,18 +1062,21 @@ class InstaBot:
                     self.this_user_like_count = 0
                     self.max_user_like_count = random.randint(
                         1, self.max_like_for_one_tag)
-                    self.remove_already_liked_page()
                 # ------------------- Like -------------------
                 if "l" in target.target_action:
+                    print("like phase")
                     self.new_auto_mod_page_like()
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:
+                    print("follow phase")
                     self.new_auto_mod_follow_page(target.target)
                     # time.sleep(random.randint(3, 10))
                 # ------------------- Unfollow -------------------
+                print("unfollow phase")
                 self.new_auto_mod_unfollow()
                 # ------------------- Comment -------------------
                 if "c" in target.target_action:
+                    print("comment phase")
                     self.new_auto_mod_page_comments()
             else:
                 if target_info and target_info['requested_by_viewer'] == False and time.time() > self.next_iteration["Follow"] and self.follow_per_day != 0:
