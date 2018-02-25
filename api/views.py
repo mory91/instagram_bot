@@ -3,7 +3,10 @@ from django.http import JsonResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from api.models import Target
+import json
 from .util_functions import do_reset
+from django.http import HttpResponse
+
 
 def index(request):
     return JsonResponse({"test": "salam"})
@@ -41,20 +44,21 @@ def dashboard(request):
 
 @login_required
 def add_target(request):
-    target_type = request.POST.get("type")
-    target = request.POST.get("name")
+    data   = json.loads(request.body.decode('utf-8'))
+    target_type = data["type"]
+    target = data["target"]
     target_action = ""
-    if request.POST.get("action_l"):
+    if data["a_l"] == True:
         target_action = target_action + "l"
-    if request.POST.get("action_f"):
+    if data["a_f"] == True:
         target_action = target_action + "f"
-    if request.POST.get("action_c"):
+    if data["a_c"] == True:
         target_action = target_action + "c"
     print(target_action)
     t = Target(target=target, target_type=target_type, target_action=target_action)
     t.save()
     do_reset()
-    return redirect(dashboard)
+    return HttpResponse("success")
 
 @login_required
 def delete_target(request, id):

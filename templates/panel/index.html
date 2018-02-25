@@ -75,40 +75,30 @@
                     <div class="col-lg-12">
                         <div class="form-panel">
                         <h4 class="mb"><i class="fa fa-angle-right"></i> Follow Targets</h4>
-                            <form action="/api/addtarget" class="form-horizontal tasi-form" method="POST">
+                            <form class="form-horizontal tasi-form">
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Target Name</label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" id="search" name="name">
-                                        <div id="res">
+                                        <div id="res" style="overflow:auto; width:100%; max-height:600px;">
+                                
                                         </div>
-                                    </div>
-                                </div>
-                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label col-lg-2" for="inputError">Type</label>
-                                    <div class="col-lg-10">
-                                        <select class="form-control" name="type">
-                                            <option value="T">tag</option>
-                                            <option value="P">page</option>
-                                            <option value="L">place</option>
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label col-lg-2" for="inputError">Action</label>
                                     <div class="col-lg-10">
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox1" value="F" name="action_f"> Follow
+                                            <input type="checkbox" id="a_f" value="F" name="action_f"> Follow
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox2" value="L" name="action_l"> Like
+                                            <input type="checkbox" id="a_l" value="L" name="action_l"> Like
                                         </label>
                                         <label class="checkbox-inline">
-                                            <input type="checkbox" id="inlineCheckbox3" value="C" name="action_c"> Comment
+                                            <input type="checkbox" id="a_c" value="C" name="action_c"> Comment
                                         </label>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-lg btn-block">Follow</button>
                             </form>
                         </div><!-- /form-panel -->
                     </div><!-- /col-lg-12 -->
@@ -171,7 +161,7 @@
 
 
     <!--common script for all pages-->
-    <script src="/templates/panel/assets/js/common-scripts.js"></script>
+    {# <script src="/templates/panel/assets/js/common-scripts.js"></script> #}
 
     <!--script for this page-->
     <script src="/templates/panel/assets/js/form-component.js"></script>    
@@ -185,15 +175,99 @@ $('#search').change(function() {
               console.log($(this).text())
               $.get(url, function(data){
                   $("#res").html("")
-                  users = data.users.slice(0, 10)
-                  for(var u of users) {
-                      $("#res").append("<span class='span_click label label-default'>" + u.user.username + "</span><br>")
+                  users = data.users
+                  hashtags = data.hashtags
+                  for(let i = 0; i < hashtags.length; i++) {
+                    $("#res").append('<div class="col-md-4 mb">\
+                                                <div class="white-panel pn">\
+                                                    <div class="white-header">\
+                                                        <h5><a target="blank" href="' + "https://www.instagram.com/explore/tags/" + hashtags[i].hashtag.name + '" >Show Hashtag</a></h5>\
+                                                    </div>\
+                                                    <div class="span_click_tag">\
+                                                        <p><img src="/templates/panel/assets/img/tag.jpg" class="img-circle" width="80"></p>\
+                                                        <p><b><span class="user_name">' + hashtags[i].hashtag.name + '</span></b></p>\
+                                                        <div class="row">\
+                                                            <div class="col-md-6">\
+                                                                <p class="small mt">Media Count</p>\
+                                                                <p>' + hashtags[i].hashtag.media_count + '</p>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                </div>\
+                                            </div>')
                   }
-              })
+                  for(let i = 0; i < users.length; i++) {
+                    $("#res").append('<div class="col-md-4 mb">\
+                                                <div class="white-panel pn">\
+                                                    <div class="white-header">\
+                                                        <h5><a target="blank" href="' + "https://www.instagram.com/" + users[i].user.username + '" >Open Page</a></h5>\
+                                                    </div>\
+                                                    <div class="span_click_page">\
+                                                        <p><img src=' + users[i].user.profile_pic_url +' class="img-circle" width="80"></p>\
+                                                        <p><b><span class="user_name">' + users[i].user.username + '</span></b></p>\
+                                                        <div class="row">\
+                                                            <div class="col-md-6">\
+                                                                <p class="small mt">Followers</p>\
+                                                                <p>' + users[i].user.follower_count + '</p>\
+                                                            </div>\
+                                                            <div class="col-md-6">\
+                                                                <p class="small mt">' + (users[i].user.is_private ? 'private' : 'public') + '</p>\
+                                                            </div>\
+                                                        </div>\
+                                                    </div>\
+                                                </div>\
+                                            </div>')
+                  }
           })
-        $(document).on('click', '.span_click',function(){
-            $("#search").val($(this).html())
+})
+        $(document).on('click', '.span_click_page',function(){
+            var packedData = getPackedData()
+            packedData.type = 'P'
+            packedData.target = $(this).find('.user_name').text()
+            console.log(packedData)
+            $.ajax({
+                url: '/api/addtarget',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(packedData),
+                dataType: 'text',
+                success: function(result) {
+                    alert('اضافه شد')
+                }
+            });
         }) 
+        $(document).on('click', '.span_click_tag',function(){
+            var packedData = getPackedData()
+            packedData.type = 'T'
+            packedData.target = $(this).find('.user_name').text()
+            console.log(packedData)
+            $.ajax({
+                url: '/api/addtarget',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(packedData),
+                dataType: 'text',
+                success: function(result) {
+                    alert('اضافه شد')
+                }
+            });
+        }) 
+        function getPackedData() {
+            var res = {}
+            res.a_c = false;
+            res.a_f = false;
+            res.a_l = false;
+            if($("#a_c").is(':checked')){
+                res.a_c = true
+            }
+            if($("#a_f").is(':checked')){
+                res.a_f = true
+            }
+            if($("#a_l").is(':checked')){
+                res.a_l = true
+            }
+            return res
+        }
       $(function(){
           $('select.styled').customSelect();
 

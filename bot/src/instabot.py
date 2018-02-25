@@ -776,6 +776,15 @@ class InstaBot:
                 self.media_by_tag.remove(self.media_by_tag[x])
             else:
                 x += 1
+    
+    def remove_already_liked_page(self):
+        self.write_log("Removing already liked medias..")
+        x = 0
+        while x < len(self.media_by_user):
+            if check_already_liked(self, media_id=self.media_by_user[x]['node']['id']) == 1:
+                self.media_by_user.remove(self.media_by_user[x])
+            else:
+                x += 1
 
     def new_auto_mod_like(self):
         if time.time() > self.next_iteration["Like"] and self.like_per_day != 0 \
@@ -1053,16 +1062,16 @@ class InstaBot:
                     self.this_user_like_count = 0
                     self.max_user_like_count = random.randint(
                         1, self.max_like_for_one_tag)
-                    self.remove_already_liked()
+                    self.remove_already_liked_page()
                 # ------------------- Like -------------------
                 if "l" in target.target_action:
                     self.new_auto_mod_page_like()
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:
-                    self.new_auto_mod_follow_page()
+                    self.new_auto_mod_follow_page(target.target)
                     # time.sleep(random.randint(3, 10))
                 # ------------------- Unfollow -------------------
-                #self.new_auto_mod_unfollow()
+                self.new_auto_mod_unfollow()
                 # ------------------- Comment -------------------
                 if "c" in target.target_action:
                     self.new_auto_mod_page_comments()
@@ -1110,9 +1119,10 @@ class InstaBot:
             # Del first media_id
             del self.media_by_user[0]
 
-    def new_auto_mod_follow_page(self):
+    def new_auto_mod_follow_page(self, username):
         if time.time() > self.next_iteration["Follow"]:
-            url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + self.media_by_user[0]['node']["owner"]["id"] + '"' + ',"first":1000}' 
+            user_id = self.get_userdetail_by_name(username)['id']
+            url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
             followers_of_page = self.s.get(url) 
             followers_of_page = json.loads(followers_of_page.text)
             if not ('data' in followers_of_page):

@@ -37,8 +37,8 @@ def get_pages():
 last_id = 0
 tags = get_tags()
 bot = InstaBot(
-    login="amir___ali98",
-    password="morteza76",
+    login="Alias.gallery",
+    password="#575#830*220",
     like_per_day=1000,
     comments_per_day=5,
     tag_list=tags,
