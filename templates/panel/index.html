@@ -232,7 +232,10 @@ $('#search').change(function() {
                 data: JSON.stringify(packedData),
                 dataType: 'text',
                 success: function(result) {
-                    alert('اضافه شد')
+                    if (result == 'already')
+                        alert('قبلا اضافه شده')
+                    else 
+                        alert('اضافه شد')
                 }
             });
         }) 
@@ -248,7 +251,10 @@ $('#search').change(function() {
                 data: JSON.stringify(packedData),
                 dataType: 'text',
                 success: function(result) {
-                    alert('اضافه شد')
+                    if (result == 'already')
+                        alert('قبلا اضافه شده')
+                    else 
+                        alert('اضافه شد')
                 }
             });
         }) 

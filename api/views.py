@@ -48,13 +48,18 @@ def add_target(request):
     target_type = data["type"]
     target = data["target"]
     target_action = ""
+
+    already = Target.objects.filter(target=target)
+    
+    if (len(already) > 0):
+        return HttpResponse("already")
+
     if data["a_l"] == True:
         target_action = target_action + "l"
     if data["a_f"] == True:
         target_action = target_action + "f"
     if data["a_c"] == True:
         target_action = target_action + "c"
-    print(target_action)
     t = Target(target=target, target_type=target_type, target_action=target_action)
     t.save()
     do_reset()
