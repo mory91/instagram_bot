@@ -66,6 +66,32 @@ def add_target(request):
     return HttpResponse("success")
 
 @login_required
+def add_page_group(request):
+    data   = json.loads(request.body.decode('utf-8'))
+    target_type = 'P'
+    targets = data["targets"]
+    target_action = ""
+    already_num = 0
+    success_num = 0
+    for t in targets:
+        target_username = t['user']['username']
+        already = Target.objects.filter(target=target_username)
+        if (len(already) > 0):
+            already_num = already_num + 1
+            continue
+        if data["a_l"] == True:
+            target_action = target_action + "l"
+        if data["a_f"] == True:
+            target_action = target_action + "f"
+        if data["a_c"] == True:
+            target_action = target_action + "c"
+        saving = Target(target=target_username, target_type=target_type, target_action=target_action)
+        saving.save()
+        success_num = success_num + 1
+    do_reset()
+    return JsonResponse({"already": already_num, "success": success_num})
+
+@login_required
 def delete_target(request, id):
     Target.objects.filter(id=id).delete()
     return redirect(dashboard)
