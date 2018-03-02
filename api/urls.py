@@ -9,5 +9,6 @@ urlpatterns = [
     path('dashboard', views.dashboard, name='dashboard'),
     path('addtarget', views.add_target, name='add_target'),
     path('addpagegroup', views.add_page_group, name='add_page_group'),
+    path('changefollowsstate', views.change_follows_state, name='change_follows_state'),
 
 ]

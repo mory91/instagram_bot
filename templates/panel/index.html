@@ -121,6 +121,17 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputError">Action</label>
+                                    <div class="col-lg-10">
+                                        <label class="checkbox-inline">
+                                            <input type="radio" id="f_f" value="F" name="follows"> Followers
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="radio" id="f_l" value="L" name="follows"> Likers
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Filter Followers</label>
                                     <div class="col-lg-10">
                                         <input placeholder="from" type="text" id="from">
@@ -144,6 +155,7 @@
                               <tr>
                                   <th><i class="fa fa-bullhorn"></i> Name</th>
                                   <th class="hidden-phone"><i class="fa fa-question-circle"></i> Type</th>
+                                  <th><i class=" fa fa-question-circle"></i> Follow From</th>
                                   <th><i class="fa fa-bookmark"></i> Action</th>
                                   <th></th>
                               </tr>
@@ -153,6 +165,7 @@
                               <tr>
                                   <td><a>{{target.target}}</a></td>
                                   <td class="hidden-phone">{{target.get_target_type_display}}</td>
+                                  <td><input type="radio" name="follows_{{target.id}}" value="F" {%if target.target_follows == 'F'%} checked {% endif %} id="followschange">Followers <input type="radio" name="follows_{{target.id}}" value="L" {%if target.target_follows == 'L'%} checked {% endif %} id="followschange">Likers</td>
                                   <td>{{target.target_action}}</td>
                                   <td>
                                       <a href="/api/deletetarget/{{target.id}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
@@ -329,11 +342,30 @@ $('#search').change(function() {
                 }
             });
         })
+        $('input[type=radio][id="followschange"').on('change', function() {
+            var idOfTarget = ($(this).attr('name').split("_")[1])
+            var newFollows = $(this).val()
+            var data = {id: idOfTarget, state: newFollows}
+            $.ajax({
+                url: '/api/changefollowsstate',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                dataType: 'text',
+                success: function(result) {
+                    alert("successfully changed")
+                }
+            });
+        })
         function getPackedData() {
             var res = {}
             res.a_c = false;
             res.a_f = false;
             res.a_l = false;
+            res.follows = 'F'
+            if ($("#f_l").is(":checked")) {
+                res.follows = 'L'
+            }
             if($("#a_c").is(':checked')){
                 res.a_c = true
             }

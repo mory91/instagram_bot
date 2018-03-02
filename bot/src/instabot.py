@@ -60,7 +60,7 @@ class InstaBot:
     api_user_detail = 'https://i.instagram.com/api/v1/users/%s/info/'
     url_graphql = 'https://www.instagram.com/graphql/query/'
     graphql_follower_hash = '37479f2b8209594dde7facb0d904896a'
-
+    graphql_likers_hash = '1cb6ec562846122743b61e492c85999f'
 
     user_agent = "" ""
     accept_language = 'en-US,en;q=0.5'
@@ -452,6 +452,23 @@ class InstaBot:
                     r = self.s.get(url_info)
                     all_data = json.loads(r.text)
                     user_info = all_data['user']
+                    return user_info
+                except:
+                    logging.exception("Except on get_userinfo_by_name")
+                    return False
+            else:
+                return False
+                
+    def get_graphql_by_name(self, username):
+        """ Get user info by name """
+
+        if self.login_status:
+            if self.login_status == 1:
+                url_info = self.url_user_detail % (username)
+                try:
+                    r = self.s.get(url_info)
+                    all_data = json.loads(r.text)
+                    user_info = all_data['graphql']
                     return user_info
                 except:
                     logging.exception("Except on get_userinfo_by_name")
@@ -1071,7 +1088,10 @@ class InstaBot:
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:
                     print("follow phase")
-                    self.new_auto_mod_follow_page(target.target)
+                    if target.target_follows == 'F':
+                        self.new_auto_mod_follow_page(target.target)
+                    elif target.target_follows == 'L':
+                        self.new_auto_mod_follow_page_likers(target.target)
                     # time.sleep(random.randint(3, 10))
                 # ------------------- Unfollow -------------------
                 print("unfollow phase")
@@ -1127,6 +1147,7 @@ class InstaBot:
     def new_auto_mod_follow_page(self, username):
         if time.time() > self.next_iteration["Follow"]:
             user_id = self.get_userdetail_by_name(username)['id']
+            print("F F of " + username)
             url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
             followers_of_page = self.s.get(url) 
             followers_of_page = json.loads(followers_of_page.text)
@@ -1149,6 +1170,38 @@ class InstaBot:
                 if self.follow(followers_of_page['node']["id"]) != False:
                     self.bot_follow_list.append(
                         [followers_of_page['node']["id"], time.time()])
+                    self.next_iteration["Follow"] = time.time() + \
+                                                    self.add_time(self.follow_delay)
+    
+    def new_auto_mod_follow_page_likers(self, username):
+        if time.time() > self.next_iteration["Follow"]:
+            user_details = self.get_graphql_by_name(username)
+            print("F L of : " + username)
+            if (user_details['user']['edge_owner_to_timeline_media']['count'] <= 0) and (len(user_details['user']['edge_owner_to_timeline_media']['edges']) > 0):
+                return
+            post_code = user_details['user']['edge_owner_to_timeline_media']['edges'][0]['node']['shortcode']
+            url = self.url_graphql + "?query_hash=" + self.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":1000}' 
+            likers_of_post = self.s.get(url) 
+            likers_of_post = json.loads(likers_of_post.text)
+            if not ('data' in likers_of_post):
+                return
+            likers_of_post = likers_of_post['data']['shortcode_media']['edge_liked_by']['edges']
+            likers_of_post = random.choice(likers_of_post)
+            if self.follow_per_day != 0:
+                if likers_of_post['node']["id"] == self.user_id:
+                    self.write_log("Keep calm - It's your own profile ;)")
+                    return
+                if check_already_followed(self, user_id=likers_of_post['node']["id"]) == 1:
+                    self.write_log("Already followed before " + likers_of_post['node']["id"])
+                    self.next_iteration["Follow"] = time.time() + \
+                                                    self.add_time(self.follow_delay/2)
+                    return
+                log_string = "Trying to follow: %s" % (
+                    likers_of_post['node']["username"])
+                self.write_log(log_string)
+                if self.follow(likers_of_post['node']["id"]) != False:
+                    self.bot_follow_list.append(
+                        [likers_of_post['node']["id"], time.time()])
                     self.next_iteration["Follow"] = time.time() + \
                                                     self.add_time(self.follow_delay)
 

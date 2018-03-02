@@ -48,7 +48,7 @@ def add_target(request):
     target_type = data["type"]
     target = data["target"]
     target_action = ""
-
+    follows = data['follows']
     already = Target.objects.filter(target=target)
     
     if (len(already) > 0):
@@ -60,7 +60,7 @@ def add_target(request):
         target_action = target_action + "f"
     if data["a_c"] == True:
         target_action = target_action + "c"
-    t = Target(target=target, target_type=target_type, target_action=target_action)
+    t = Target(target=target, target_type=target_type, target_action=target_action, target_follows= follows)
     t.save()
     do_reset()
     return HttpResponse("success")
@@ -73,6 +73,7 @@ def add_page_group(request):
     target_action = ""
     already_num = 0
     success_num = 0
+    follows = data['follows']
     for t in targets:
         target_username = t['user']['username']
         already = Target.objects.filter(target=target_username)
@@ -85,7 +86,7 @@ def add_page_group(request):
             target_action = target_action + "f"
         if data["a_c"] == True:
             target_action = target_action + "c"
-        saving = Target(target=target_username, target_type=target_type, target_action=target_action)
+        saving = Target(target=target_username, target_type=target_type, target_action=target_action, target_follows= follows)
         saving.save()
         success_num = success_num + 1
     do_reset()
@@ -96,4 +97,13 @@ def delete_target(request, id):
     Target.objects.filter(id=id).delete()
     return redirect(dashboard)
 
-
+@login_required
+def change_follows_state(request):
+    data   = json.loads(request.body.decode('utf-8'))
+    id = data['id']
+    state = data['state']
+    target = Target.objects.get(id=id)
+    target.target_follows = state
+    target.save()
+    do_reset()
+    return HttpResponse("success")

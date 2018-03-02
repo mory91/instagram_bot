@@ -2295,3 +2295,118 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/ssl.py", line 575, in read
     v = self._sslobj.read(len, buffer)
 KeyboardInterrupt
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 918, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 935, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 650, in follow
+    follow = self.s.post(url_follow)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 452, in get_userdetail_by_name
+    r = self.s.get(url_info)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Except on unfollow... Looks like a network error
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 693, in unfollow_on_cleanup
+    time.sleep(300)
+KeyboardInterrupt
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 412, in get_username_by_user_id
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 657, in follow
+    insert_username(self, user_id=user_id, username=username)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 74, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
+ERROR:root:Except on unfollow... Looks like a network error
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 693, in unfollow_on_cleanup
+    time.sleep(300)
+KeyboardInterrupt
