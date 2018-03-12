@@ -35,14 +35,12 @@ def get_pages(bot):
     pages_objs = Target.objects.filter(target_type='P', bot=bot.id)
     return pages_objs
 
-def run_bot(bot, lck):
+def run_bot(bot):
     last_id = 0
-    lck.acquire()
     tags = get_tags(bot)
     if (len(bot.username) <= 0):
         bot.started = False
         return
-    lck.release()
     
     insta_bot = InstaBot(
         login=bot.username,
@@ -65,10 +63,8 @@ def run_bot(bot, lck):
         second_password=bot.second_password)
 
     while(1):
-        lck.acquire()
         last = Reset.objects.filter(bot=bot.id).last()
         bot_db = Bot.objects.get(id=bot.id)
-        lck.release()
         if bot_db.state == 2:
             insta_bot.cleanup()
             time.sleep(3)
@@ -91,10 +87,8 @@ def run_bot(bot, lck):
                 unwanted_username_list=[],
                 second_login=bot.second_username,
                 second_password=bot.second_password)
-            lck.acquire()
             bot_db.state = 1
             bot_db.save()
-            lck.release()
         if last is not None and last.id > last_id:
             last_id = last.id
             tags = get_tags(bot)
@@ -105,22 +99,19 @@ def run_bot(bot, lck):
         insta_bot.new_auto_mod_tag()
         insta_bot.new_auto_mod_page()
 
-lock = Lock()
 
 while(1):
-    lock.acquire()
     bs = Bot.objects.all()
     bs_list = list(bs)
     if bs != None and len(bs) > 0:
         for b in bs_list:
             if b.state == -1:
                 b.state = 1
-                p = Process(target=run_bot, args=(b, lock,))
+                p = Process(target=run_bot, args=(b,))
                 p.start()
                 time.sleep(3)
                 bots_p.append({"id": b.id,  "process": p})
                 b.save()
-    lock.release()
 
 
 
