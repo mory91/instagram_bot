@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from api.models import Target
@@ -19,7 +19,8 @@ def login_user(request):
         user = authenticate(username= username, password= password)
         if user is not None:
             login(request, user)
-            return redirect(dashboard)
+            bot = Bot.objects.last()
+            return HttpResponseRedirect('/api/%d/dashboard'%bot.id)
         else:
             return redirect(login_user)
 
