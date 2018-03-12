@@ -122,6 +122,9 @@ class InstaBot:
     # For new_auto_mod
     next_iteration = {"Like": 0, "Follow": 0, "Unfollow": 0, "Comments": 0}
 
+    cached_info = {}
+    false_bot = {}
+
     def __init__(self,
                  login,
                  password,
@@ -158,7 +161,9 @@ class InstaBot:
                  user_blacklist={},
                  tag_blacklist=[],
                  unwanted_username_list=[],
-                 unfollow_whitelist=[]):
+                 unfollow_whitelist=[],
+                 second_login="",
+                 second_password=""):
 
         self.database_name = database_name
         self.follows_db = sqlite3.connect(database_name, timeout=0, isolation_level=None)
@@ -177,6 +182,10 @@ class InstaBot:
         self.tag_blacklist = tag_blacklist
         self.unfollow_whitelist = unfollow_whitelist
         self.comment_list = comment_list
+
+
+        self.second_login = second_login
+        self.second_password = second_password
 
         self.time_in_day = 24 * 60 * 60
         # Like
@@ -333,18 +342,18 @@ class InstaBot:
 
     def cleanup(self, *_):
         # Unfollow all bot follow
-        if self.follow_counter >= self.unfollow_counter:
-            for f in self.bot_follow_list:
-                log_string = "Trying to unfollow: %s" % (f[0])
-                self.write_log(log_string)
-                self.unfollow_on_cleanup(f[0])
-                sleeptime = random.randint(self.unfollow_break_min,
-                                           self.unfollow_break_max)
-                log_string = "Pausing for %i seconds... %i of %i" % (
-                    sleeptime, self.unfollow_counter, self.follow_counter)
-                self.write_log(log_string)
-                time.sleep(sleeptime)
-                self.bot_follow_list.remove(f)
+        # if self.follow_counter >= self.unfollow_counter:
+        #     for f in self.bot_follow_list:
+        #         log_string = "Trying to unfollow: %s" % (f[0])
+        #         self.write_log(log_string)
+        #         self.unfollow_on_cleanup(f[0])
+        #         sleeptime = random.randint(self.unfollow_break_min,
+        #                                    self.unfollow_break_max)
+        #         log_string = "Pausing for %i seconds... %i of %i" % (
+        #             sleeptime, self.unfollow_counter, self.follow_counter)
+        #         self.write_log(log_string)
+        #         time.sleep(sleeptime)
+        #         self.bot_follow_list.remove(f)
 
         # Logout
         if self.login_status:
@@ -472,6 +481,23 @@ class InstaBot:
                     return user_info
                 except:
                     logging.exception("Except on get_userinfo_by_name")
+                    return False
+            else:
+                return False
+        
+    def get_all_by_name(self, username):
+        """ Get user info by name """
+
+        if self.login_status:
+            if self.login_status == 1:
+                url_info = self.url_user_detail % (username)
+                try:
+                    r = self.s.get(url_info)
+                    all_data = json.loads(r.text)
+                    user_info = all_data
+                    return user_info
+                except:
+                    logging.exception("Except on get_all_by_name")
                     return False
             else:
                 return False
@@ -840,8 +866,6 @@ class InstaBot:
                                                 self.add_time(self.follow_delay)
 
     def new_auto_mod_unfollow(self):
-        print(time.time())
-        print(self.next_iteration["Unfollow"])
         if time.time() > self.next_iteration["Unfollow"] and self.unfollow_per_day != 0:
             if self.bot_mode == 0:
                 log_string = "Trying to unfollow #%i: " % (self.unfollow_counter + 1)
@@ -1100,8 +1124,7 @@ class InstaBot:
                 if "c" in target.target_action:
                     print("comment phase")
                     self.new_auto_mod_page_comments()
-            else:
-                if target_info and target_info['requested_by_viewer'] == False and time.time() > self.next_iteration["Follow"] and self.follow_per_day != 0:
+            elif target_info and target_info['requested_by_viewer'] == False and time.time() > self.next_iteration["Follow"] and self.follow_per_day != 0:
                     if target_info["id"] == self.user_id:
                         self.write_log("Keep calm - It's your own profile ;)")
                         return
@@ -1120,10 +1143,32 @@ class InstaBot:
                             [target_info["id"], time.time()])
                         self.next_iteration["Follow"] = time.time() + \
                                                         self.add_time(self.follow_delay)
+            
+            elif target_info == False:
+                if (self.second_login != None and self.second_password != None and ("f" in target.target_action)):
+                    self.false_bot = InstaBot(login=self.second_login, password=self.second_password)
+                    self.cached_info[target.target] = self.false_bot.get_all_by_name(target.target)
+                    print("faked waiting for 3")
+                    time.sleep(3)
+                    print("follow phase")
+                    if self.false_bot.login_status:
+                        if self.cached_info[target.target]["user"]["is_private"] == False: 
+                            if target.target_follows == 'F':
+                                self.new_auto_mod_follow_page_blocked(target.target)
+                            elif target.target_follows == 'L':
+                                self.new_auto_mod_follow_page_likers_blocked(target.target)
+                        else:
+                            print("sorry it's private :(")
+                        self.false_bot.logout()
+                        time.sleep(10)
+                    # time.sleep(random.randint(3, 10))
+
+
+
 
             # Bot iteration in 1 sec
             time.sleep(3)
-            print("Tic!")
+            print("Tic! " + " : " + self.user_login)
         else:
             print("sleeping until {hour}:{min}".format(hour=self.start_at_h,
                                                         min=self.start_at_m), end="\r")
@@ -1172,6 +1217,34 @@ class InstaBot:
                         [followers_of_page['node']["id"], time.time()])
                     self.next_iteration["Follow"] = time.time() + \
                                                     self.add_time(self.follow_delay)
+
+    def new_auto_mod_follow_page_blocked(self, username):
+        user_id = self.false_bot.get_userdetail_by_name(username)['id']
+        print("F F of " + username)
+        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
+        followers_of_page = self.false_bot.s.get(url) 
+        followers_of_page = json.loads(followers_of_page.text)
+        if not ('data' in followers_of_page):
+            return
+        followers_of_page = followers_of_page['data']['user']['edge_followed_by']['edges']
+        followers_of_page = random.choice(followers_of_page)
+        if self.follow_per_day != 0:
+            if followers_of_page['node']["id"] == self.user_id:
+                self.write_log("Keep calm - It's your own profile ;)")
+                return
+            if check_already_followed(self, user_id=followers_of_page['node']["id"]) == 1:
+                self.write_log("Already followed before " + followers_of_page['node']["id"])
+                self.next_iteration["Follow"] = time.time() + \
+                                                self.add_time(self.follow_delay/2)
+                return
+            log_string = "Trying to follow: %s" % (
+                followers_of_page['node']["username"])
+            self.write_log(log_string)
+            if self.follow(followers_of_page['node']["id"]) != False:
+                self.bot_follow_list.append(
+                    [followers_of_page['node']["id"], time.time()])
+                self.next_iteration["Follow"] = time.time() + \
+                                                self.add_time(self.follow_delay)
     
     def new_auto_mod_follow_page_likers(self, username):
         if time.time() > self.next_iteration["Follow"]:
@@ -1204,6 +1277,37 @@ class InstaBot:
                         [likers_of_post['node']["id"], time.time()])
                     self.next_iteration["Follow"] = time.time() + \
                                                     self.add_time(self.follow_delay)
+
+    def new_auto_mod_follow_page_likers_blocked(self, username):
+        user_details = self.false_bot.get_graphql_by_name(username)
+        print("F L of : " + username)
+        if (user_details['user']['edge_owner_to_timeline_media']['count'] <= 0) and (len(user_details['user']['edge_owner_to_timeline_media']['edges']) > 0):
+            return
+        post_code = user_details['user']['edge_owner_to_timeline_media']['edges'][0]['node']['shortcode']
+        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":1000}' 
+        likers_of_post = self.false_bot.s.get(url) 
+        likers_of_post = json.loads(likers_of_post.text)
+        if not ('data' in likers_of_post):
+            return
+        likers_of_post = likers_of_post['data']['shortcode_media']['edge_liked_by']['edges']
+        likers_of_post = random.choice(likers_of_post)
+        if self.follow_per_day != 0:
+            if likers_of_post['node']["id"] == self.user_id:
+                self.write_log("Keep calm - It's your own profile ;)")
+                return
+            if check_already_followed(self, user_id=likers_of_post['node']["id"]) == 1:
+                self.write_log("Already followed before " + likers_of_post['node']["id"])
+                self.next_iteration["Follow"] = time.time() + \
+                                                self.add_time(self.follow_delay/2)
+                return
+            log_string = "Trying to follow: %s" % (
+                likers_of_post['node']["username"])
+            self.write_log(log_string)
+            if self.follow(likers_of_post['node']["id"]) != False:
+                self.bot_follow_list.append(
+                    [likers_of_post['node']["id"], time.time()])
+                self.next_iteration["Follow"] = time.time() + \
+                                                self.add_time(self.follow_delay)
 
     def new_auto_mod_page_comments(self):
         if time.time() > self.next_iteration["Comments"] and self.comments_per_day != 0 \

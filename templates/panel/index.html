@@ -39,6 +39,8 @@
             <!--logo start-->
             <a href="index.html" class="logo"><b>Instagram Bot</b></a>
             <!--logo end-->
+
+            
         </header>
       <!--header end-->
       
@@ -50,15 +52,24 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
-              
+                    
               	  <p class="centered"><a><img src="/templates/panel/assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  	
-                  <li class="mt">
-                      <a class="active" href="/api/dashboard">
-                          <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
-                      </a>
-                  </li>
+              	    <button id="createbot">create bot</button>
+                    {% for bot in bots%}
+                    <li class="mt">
+                        {% if activated.id == bot.id %}
+                        <a class="active" href="/api/{{bot.id}}/dashboard">
+                            <i class="fa fa-dashboard"></i>
+                            <span>{{bot.name}}</span>
+                        </a>
+                        {%else%}
+                        <a href="/api/{{bot.id}}/dashboard">
+                            <i class="fa fa-dashboard"></i>
+                            <span>{{bot.name}}</span>
+                        </a>
+                        {%endif%}
+                    </li>
+                  {% endfor %}
           </div>
       </aside>
       <!--sidebar end-->
@@ -93,6 +104,69 @@
                         </div>
                 <div class="row mt">
                     <div class="row mt">
+
+                    <div class="col-lg-12">
+                        <div class="form-panel">
+                        <h4 class="mb"><i class="fa fa-angle-right"></i> Config</h4>
+                            <form class="form-horizontal tasi-form" method="post" action="/api/{{activated.id}}/setconfig">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Username</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.username}}" type="text" class="form-control" id="username" name="username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Password</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.password}}" type="text" class="form-control" id="password" name="password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Like Per Day</label>
+                                    <div class="col-lg-10">
+                                        <input value={{activated.like_per_day}} type="text" class="form-control" id="like_per_day" name="like_per_day">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Comment Per Day</label>
+                                    <div class="col-lg-10">
+                                        <input value={{activated.comment_per_day}} type="text" class="form-control" id="comment_per_day" name="comment_per_day">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Follow Per Day</label>
+                                    <div class="col-lg-10">
+                                        <input value={{activated.follow_per_day}} type="text" class="form-control" id="follow_per_day" name="follow_per_day">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Unfollow Per Day</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.unfollow_per_day}}" type="text" class="form-control" id="unfollow_per_day" name="unfollow_per_day">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Comments Text (Seprate by "*" )</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.comments}}" type="text" class="form-control" id="comment_text" name="comment_text">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Second Username</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.second_username}}" type="text" class="form-control" id="username" name="second_username">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label col-lg-2" for="inputSuccess">Second Password</label>
+                                    <div class="col-lg-10">
+                                        <input value="{{activated.second_password}}" type="text" class="form-control" id="password" name="second_password">
+                                    </div>
+                                </div>
+                                <input id="save-btn" type="submit" class="btn btn-primary" value="save">
+                            </form>
+                        </div><!-- /form-panel -->
+                    </div><!-- /col-lg-12 -->
                     
                     <div class="col-lg-12">
                         <div class="form-panel">
@@ -188,7 +262,7 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              Seyed Morteza Hosseini
               <a href="blank.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -216,7 +290,7 @@
   <script>
   var targets;
   function fetchDetails() {
-      var username = "alias.gallery"
+      var username = "{{activated.username}}"
       var url = "https://www.instagram.com/" + username + "/?__a=1"
       $.get(url, function(data){
           var profile_pic = data.user.profile_pic_url_hd
@@ -294,7 +368,7 @@ $('#search-btn').on('click', function() {
             packedData.target = $(this).find('.user_name').text()
             console.log(packedData)
             $.ajax({
-                url: '/api/addtarget',
+                url: '/api/{{activated.id}}/addtarget',
                 type: 'POST',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(packedData),
@@ -313,7 +387,7 @@ $('#search-btn').on('click', function() {
             packedData.target = $(this).find('.user_name').text()
             console.log(packedData)
             $.ajax({
-                url: '/api/addtarget',
+                url: '/api/{{activated.id}}/addtarget',
                 type: 'POST',
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(packedData),
@@ -354,6 +428,20 @@ $('#search-btn').on('click', function() {
                 dataType: 'text',
                 success: function(result) {
                     alert("successfully changed")
+                }
+            });
+        })
+        $('#createbot').on('click', function() {
+            var name = prompt("name?")
+            var data = {name: name}
+            $.ajax({
+                url: '/api/createbot',
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                data: JSON.stringify(data),
+                dataType: 'text',
+                success: function(result) {
+                    alert("successfully created!")
                 }
             });
         })

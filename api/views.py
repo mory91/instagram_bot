@@ -3,10 +3,11 @@ from django.http import JsonResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from api.models import Target
+from api.models import Bot
 import json
 from .util_functions import do_reset
 from django.http import HttpResponse
-
+import os
 
 def index(request):
     return JsonResponse({"test": "salam"})
@@ -29,8 +30,10 @@ def login_user(request):
             return render(request, "./panel/login.html")
 
 @login_required
-def dashboard(request):
-    targets = Target.objects.all()
+def dashboard(request, bot_id):
+    targets = Target.objects.filter(bot__pk=bot_id)
+    bots = Bot.objects.all()
+    bot = Bot.objects.get(id=bot_id)
     for t in targets:
         actions = t.target_action
         t.target_action = ""
@@ -40,10 +43,10 @@ def dashboard(request):
             t.target_action = t.target_action + " Comment "
         if "f" in actions:
             t.target_action = t.target_action + " Follow "
-    return render(request, "./panel/index.html", {"targets":targets})
+    return render(request, "./panel/index.html", {"targets":targets, "bots": bots, "activated": bot})
 
 @login_required
-def add_target(request):
+def add_target(request, bot_id):
     data   = json.loads(request.body.decode('utf-8'))
     target_type = data["type"]
     target = data["target"]
@@ -60,9 +63,10 @@ def add_target(request):
         target_action = target_action + "f"
     if data["a_c"] == True:
         target_action = target_action + "c"
-    t = Target(target=target, target_type=target_type, target_action=target_action, target_follows= follows)
+    b = Bot.objects.get(id=bot_id)
+    t = Target(target=target, target_type=target_type, target_action=target_action, target_follows= follows, bot=b)
     t.save()
-    do_reset()
+    do_reset(bot_id)
     return HttpResponse("success")
 
 @login_required
@@ -86,24 +90,58 @@ def add_page_group(request):
             target_action = target_action + "f"
         if data["a_c"] == True:
             target_action = target_action + "c"
-        saving = Target(target=target_username, target_type=target_type, target_action=target_action, target_follows= follows)
+        b = Bot.objects.get(id=bot_id)
+        saving = Target(target=target_username, target_type=target_type, target_action=target_action, target_follows= follows, bot=b)
         saving.save()
         success_num = success_num + 1
-    do_reset()
+    do_reset(bot_id)
     return JsonResponse({"already": already_num, "success": success_num})
 
 @login_required
-def delete_target(request, id):
+def delete_target(request, id, bot_id):
     Target.objects.filter(id=id).delete()
-    return redirect(dashboard)
-
+    return redirect("/api/" + str(bot_id) + "/dashboard")
 @login_required
-def change_follows_state(request):
+def change_follows_state(request, bot_id):
     data   = json.loads(request.body.decode('utf-8'))
     id = data['id']
     state = data['state']
     target = Target.objects.get(id=id)
     target.target_follows = state
     target.save()
-    do_reset()
+    do_reset(bot_id)
     return HttpResponse("success")
+
+@login_required
+def create_bot(request):
+    data   = json.loads(request.body.decode('utf-8'))
+    name = data['name']
+    bot = Bot(name=name, state = 0)
+    bot.save()
+    return HttpResponse("success")
+
+@login_required
+def set_config(request, bot_id):
+    if request.method == "POST":
+        bot = Bot.objects.get(id=bot_id)
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+        like_per_day = request.POST.get("like_per_day")
+        comment_per_day = request.POST.get("comment_per_day")
+        follow_per_day = request.POST.get("follow_per_day")
+        unfollow_per_day = request.POST.get("unfollow_per_day")
+        second_username = request.POST.get("second_username")
+        second_password = request.POST.get("second_password")
+        comment_text = request.POST.get("comment_text")
+        bot.username = username
+        bot.password = password
+        bot.like_per_day = int(like_per_day)
+        bot.comment_per_day = int(comment_per_day)
+        bot.follow_per_day = int(follow_per_day)
+        bot.unfollow_per_day = int(unfollow_per_day)
+        bot.second_username = second_username
+        bot.second_password = second_password
+        bot.comments = comment_text
+        bot.state = 2
+        bot.save()
+        return redirect("/api/" + str(bot_id) + "/dashboard")
