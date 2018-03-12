@@ -71,17 +71,18 @@ def add_target(request, bot_id):
     return HttpResponse("success")
 
 @login_required
-def add_page_group(request):
+def add_page_group(request, bot_id):
     data   = json.loads(request.body.decode('utf-8'))
     target_type = 'P'
     targets = data["targets"]
-    target_action = ""
     already_num = 0
     success_num = 0
     follows = data['follows']
+    b = Bot.objects.get(id=bot_id)
     for t in targets:
         target_username = t['user']['username']
-        already = Target.objects.filter(target=target_username)
+        target_action = ""
+        already = Target.objects.filter(target=target_username, id=bot_id)
         if (len(already) > 0):
             already_num = already_num + 1
             continue
@@ -91,7 +92,6 @@ def add_page_group(request):
             target_action = target_action + "f"
         if data["a_c"] == True:
             target_action = target_action + "c"
-        b = Bot.objects.get(id=bot_id)
         saving = Target(target=target_username, target_type=target_type, target_action=target_action, target_follows= follows, bot=b)
         saving.save()
         success_num = success_num + 1
@@ -100,14 +100,16 @@ def add_page_group(request):
 
 @login_required
 def delete_target(request, id, bot_id):
-    Target.objects.filter(id=id).delete()
+    b = Bot.objects.get(id=bot_id)
+    Target.objects.filter(id=id, bot=b).delete()
     return redirect("/api/" + str(bot_id) + "/dashboard")
 @login_required
 def change_follows_state(request, bot_id):
     data   = json.loads(request.body.decode('utf-8'))
     id = data['id']
     state = data['state']
-    target = Target.objects.get(id=id)
+    b = Bot.objects.get(id=bot_id)
+    target = Target.objects.get(id=id, bot=b)
     target.target_follows = state
     target.save()
     do_reset(bot_id)
