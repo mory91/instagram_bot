@@ -110,8 +110,9 @@ lock = Lock()
 while(1):
     lock.acquire()
     bs = Bot.objects.all()
+    bs_list = list(bs)
     if bs != None and len(bs) > 0:
-        for b in bs:
+        for b in bs_list:
             if b.state == -1:
                 b.state = 1
                 p = Process(target=run_bot, args=(b, lock,))
