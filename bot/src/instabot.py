@@ -262,7 +262,7 @@ class InstaBot:
                                'invalid' % (user))
             else:
                 # prevent exception if user have no media
-                id_user = all_data['user']['id']
+                id_user = all_data['graphql']['user']['id']
                 # Update the user_name with the user_id
                 self.user_blacklist[user] = id_user
                 log_string = "Blacklisted user %s added with ID: %s" % (user,
@@ -436,9 +436,9 @@ class InstaBot:
                 try:
                     r = self.s.get(url_info)
                     all_data = json.loads(r.text)
-                    user_info = all_data['user']
-                    follows = user_info['follows']['count']
-                    follower = user_info['followed_by']['count']
+                    user_info = all_data['graphql']
+                    follows = user_info['edge_follow']['count']
+                    follower = user_info['edge_followed_by']['count']
                     follow_viewer = user_info['follows_viewer']
                     if follower > 3000 or follows > 1500:
                         self.write_log('   >>>This is probably Selebgram, Business or Fake account')
@@ -460,7 +460,7 @@ class InstaBot:
                 try:
                     r = self.s.get(url_info)
                     all_data = json.loads(r.text)
-                    user_info = all_data['user']
+                    user_info = all_data['graphql']['user']
                     return user_info
                 except:
                     logging.exception("Except on get_userinfo_by_name")
@@ -958,14 +958,14 @@ class InstaBot:
                     r = self.s.get(url_tag)
                     all_data = json.loads(r.text)
 
-                    user_info = all_data['user']
+                    user_info = all_data['graphql']['user']
                     i = 0
                     log_string = "Checking user info.."
                     self.write_log(log_string)
 
-                    follows = user_info['follows']['count']
-                    follower = user_info['followed_by']['count']
-                    media = user_info['media']['count']
+                    follows = user_info['edge_follow']['count']
+                    follower = user_info['edge_followed_by']['count']
+                    media = user_info['edge_owner_to_timeline_media']['count']
                     follow_viewer = user_info['follows_viewer']
                     followed_by_viewer = user_info[
                         'followed_by_viewer']

@@ -22,15 +22,15 @@ def get_user_info(self, username):
                 log_string = "Checking user info.."
                 self.write_log(log_string)
 
-                follows = user_info['user']['follows']['count']
-                follower = user_info['user']['followed_by']['count']
+                follows = user_info['graphql']['user']['edge_follow']['count']
+                follower = user_info['graphql']['user']['edge_followed_by']['count']
                 if self.is_self_checking is not False:
                     self.self_following = follows
                     self.self_follower = follower
                     self.is_self_checking = False
                     self.is_checked = True
                     return 0
-                media = user_info['user']['media']['count']
+                media = user_info['user']['edge_owner_to_timeline_media']['count']
                 follow_viewer = user_info['user']['follows_viewer']
                 followed_by_viewer = user_info['user']['followed_by_viewer']
                 requested_by_viewer = user_info['user'][
