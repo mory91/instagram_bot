@@ -1252,7 +1252,9 @@ class InstaBot:
             print("F L of : " + username)
             if (user_details['user']['edge_owner_to_timeline_media']['count'] <= 0) and (len(user_details['user']['edge_owner_to_timeline_media']['edges']) <= 0):
                 return
-            post_code = user_details['user']['edge_owner_to_timeline_media']['edges'][0]['node']['shortcode']
+            '''TODO:khate pain random she'''
+            edge_chosed = random.choice(user_details['user']['edge_owner_to_timeline_media']['edges'])
+            post_code = edge_chosed['node']['shortcode']
             url = self.url_graphql + "?query_hash=" + self.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":1000}' 
             likers_of_post = self.s.get(url) 
             likers_of_post = json.loads(likers_of_post.text)
