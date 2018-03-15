@@ -310,6 +310,7 @@ class InstaBot:
         if login.status_code == 200:
             r = self.s.get('https://www.instagram.com/')
             finder = r.text.find(self.user_login)
+            print(r.text)
             if finder != -1:
                 ui = UserInfo()
                 self.user_id = ui.get_user_id_by_login(self.user_login)
