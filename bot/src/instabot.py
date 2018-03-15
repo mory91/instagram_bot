@@ -306,11 +306,10 @@ class InstaBot:
         self.s.cookies['ig_vh'] = '772'
         self.s.cookies['ig_or'] = 'landscape-primary'
         time.sleep(5 * random.random())
-
+        print(login.text)
         if login.status_code == 200:
             r = self.s.get('https://www.instagram.com/')
             finder = r.text.find(self.user_login)
-            print(r.text)
             if finder != -1:
                 ui = UserInfo()
                 self.user_id = ui.get_user_id_by_login(self.user_login)
@@ -1113,6 +1112,8 @@ class InstaBot:
                 # ------------------- Follow -------------------
                 if "f" in target.target_action:
                     print("follow phase")
+                    print("time: " + str(time.time()))
+                    print(self.next_iteration["Follow"])
                     if target.target_follows == 'F':
                         self.new_auto_mod_follow_page(target.target)
                     elif target.target_follows == 'L':

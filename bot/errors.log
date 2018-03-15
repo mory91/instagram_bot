@@ -18052,3 +18052,197 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/ssl.py", line 575, in read
     v = self._sslobj.read(len, buffer)
 KeyboardInterrupt
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 684, in follow
+    insert_username(self, user_id=user_id, username=username)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 74, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 462, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 462, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 462, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on auto_unfollow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 959, in auto_unfollow
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
