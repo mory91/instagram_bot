@@ -9,7 +9,7 @@ from src.feed_scanner import feed_scanner
 from src.follow_protocol import follow_protocol
 from src.unfollow_protocol import unfollow_protocol
 
-from multiprocessing import Process, Lock
+import threading
 
 import sys
 sys.path.append('../')
@@ -23,7 +23,7 @@ django.setup()
 
 from api.models import Reset, Target, Bot
 
-bots_p = []
+bots_t = []
 
 def get_tags(bot):
     tags = []
@@ -100,6 +100,15 @@ def run_bot(bot):
         insta_bot.new_auto_mod_page()
 
 
+
+bs = Bot.objects.all()
+bs_list = list(bs)
+if bs != None and len(bs) > 0:
+    for b in bs_list:
+        if b.state == 1:
+            b.state = -1
+            b.save()
+
 while(1):
     bs = Bot.objects.all()
     bs_list = list(bs)
@@ -107,10 +116,10 @@ while(1):
         for b in bs_list:
             if b.state == -1:
                 b.state = 1
-                p = Process(target=run_bot, args=(b,))
-                p.start()
+                t = threading.Thread(target=run_bot, args=(b,))
+                t.start()
                 time.sleep(3)
-                bots_p.append({"id": b.id,  "process": p})
+                bots_t.append({"id": b.id,  "process": t})
                 b.save()
 
 
