@@ -850,11 +850,12 @@ class InstaBot:
             if self.media_by_tag[0]['node']["owner"]["id"] == self.user_id:
                 self.write_log("Keep calm - It's your own profile ;)")
                 return
-            if check_already_followed(self, user_id=self.media_by_tag[0]['node']["owner"]["id"]) == 1:
-                self.write_log("Already followed before " + self.media_by_tag[0]['node']["owner"]["id"])
-                self.next_iteration["Follow"] = time.time() + \
-                                                self.add_time(self.follow_delay/2)
-                return
+            # TODO: check already folowed
+            # if check_already_followed(self, user_id=self.media_by_tag[0]['node']["owner"]["id"]) == 1:
+            #     self.write_log("Already followed before " + self.media_by_tag[0]['node']["owner"]["id"])
+            #     self.next_iteration["Follow"] = time.time() + \
+            #                                     self.add_time(self.follow_delay/2)
+            #     return
             log_string = "Trying to follow: %s" % (
                 self.media_by_tag[0]['node']["owner"]["id"])
             self.write_log(log_string)
@@ -1147,6 +1148,8 @@ class InstaBot:
                                                         self.add_time(self.follow_delay)
             
             elif target_info == False:
+                target.blocked = True
+                target.save()
                 if (self.second_login != None and self.second_password != None and ("f" in target.target_action)):
                     self.false_bot = InstaBot(login=self.second_login, password=self.second_password)
                     self.cached_info[target.target] = self.false_bot.get_all_by_name(target.target)
@@ -1206,7 +1209,7 @@ class InstaBot:
                 if followers_of_page['node']["id"] == self.user_id:
                     self.write_log("Keep calm - It's your own profile ;)")
                     return
-                if check_already_followed(self, user_id=followers_of_page['node']["id"]) == 1:
+                if followers_of_page['node']['followed_by_viewer'] == True:
                     self.write_log("Already followed before " + followers_of_page['node']["id"])
                     self.next_iteration["Follow"] = time.time() + \
                                                     self.add_time(self.follow_delay/2)
@@ -1234,7 +1237,7 @@ class InstaBot:
             if followers_of_page['node']["id"] == self.user_id:
                 self.write_log("Keep calm - It's your own profile ;)")
                 return
-            if check_already_followed(self, user_id=followers_of_page['node']["id"]) == 1:
+            if cfollowers_of_page['node']['followed_by_viewer'] == True:
                 self.write_log("Already followed before " + followers_of_page['node']["id"])
                 self.next_iteration["Follow"] = time.time() + \
                                                 self.add_time(self.follow_delay/2)
@@ -1268,7 +1271,7 @@ class InstaBot:
                 if likers_of_post['node']["id"] == self.user_id:
                     self.write_log("Keep calm - It's your own profile ;)")
                     return
-                if check_already_followed(self, user_id=likers_of_post['node']["id"]) == 1:
+                if likers_of_post['node']["followed_by_viewer"] == True:
                     self.write_log("Already followed before " + likers_of_post['node']["id"])
                     self.next_iteration["Follow"] = time.time() + \
                                                     self.add_time(self.follow_delay/2)
@@ -1299,7 +1302,7 @@ class InstaBot:
             if likers_of_post['node']["id"] == self.user_id:
                 self.write_log("Keep calm - It's your own profile ;)")
                 return
-            if check_already_followed(self, user_id=likers_of_post['node']["id"]) == 1:
+            if likers_of_post['node']["followed_by_viewer"] == True:
                 self.write_log("Already followed before " + likers_of_post['node']["id"])
                 self.next_iteration["Follow"] = time.time() + \
                                                 self.add_time(self.follow_delay/2)

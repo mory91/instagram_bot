@@ -293,9 +293,9 @@
       var username = "{{activated.username}}"
       var url = "https://www.instagram.com/" + username + "/?__a=1"
       $.get(url, function(data){
-          var profile_pic = data.user.profile_pic_url_hd
-          var followers = data.user.followed_by.count
-          var following = data.user.follows.count
+          var profile_pic = data.graphql.user.profile_pic_url_hd
+          var followers = data.graphql.user.edge_followed_by.count
+          var following = data.graphql.user.edge_follow.count
           $('.details .link').prop("href", url)
           $('.details .img-circle').prop("src", profile_pic)
           $('.details .following').html(following)
