@@ -239,13 +239,15 @@
                               <tbody>
                               {% for target in targets %}
                               <tr>
-                                  <td><a>{{target.target}}</a></td>
+                                  <td><a {%if target.blocked == True %} style="color:red" {% endif %}>{{target.target}}</a></td>
                                   <td class="hidden-phone">{{target.get_target_type_display}}</td>
                                   <td><input type="radio" name="follows_{{target.id}}" value="F" {%if target.target_follows == 'F'%} checked {% endif %} id="followschange">Followers <input type="radio" name="follows_{{target.id}}" value="L" {%if target.target_follows == 'L'%} checked {% endif %} id="followschange">Likers</td>
                                   <td>{{target.target_action}}</td>
                                   <td>
                                       <a href="/api/{{activated.id}}/deletetarget/{{target.id}}"><button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button></a>
                                   </td>
+                                  <td style="color:black">{{target.follower_num}}</td>
+                                  <td style="color:green">{{target.follow_back_num}}</td>
                               </tr>
                               {% endfor %}
                               </tbody>

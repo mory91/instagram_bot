@@ -15,6 +15,8 @@ class Target(models.Model):
     target_type = models.CharField(max_length=1, choices=TYPES)
     target_action = models.CharField(max_length=3)
     target_follows = models.CharField(max_length=1, choices=FOLLOWS)
+    follower_num = models.IntegerField(default=0)
+    follow_back_num = models.IntegerField(default=0)
     blocked = models.BooleanField(default = False)
     bot = models.ForeignKey(
         'Bot',

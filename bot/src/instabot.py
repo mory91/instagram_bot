@@ -60,6 +60,7 @@ class InstaBot:
     api_user_detail = 'https://i.instagram.com/api/v1/users/%s/info/'
     url_graphql = 'https://www.instagram.com/graphql/query/'
     graphql_follower_hash = '37479f2b8209594dde7facb0d904896a'
+    graphql_following_hash = '58712303d941c6855d4e888c5f0cd22f'
     graphql_likers_hash = '1cb6ec562846122743b61e492c85999f'
 
     user_agent = "" ""
@@ -120,7 +121,7 @@ class InstaBot:
     end_at_m = 59,
 
     # For new_auto_mod
-    next_iteration = {"Like": 0, "Follow": 0, "Unfollow": 0, "Comments": 0}
+    next_iteration = {"Like": 0, "Follow": 0, "Unfollow": 0, "Comments": 0, "update_numbers": 0}
 
     cached_info = {}
     false_bot = {}
@@ -208,6 +209,11 @@ class InstaBot:
         self.comments_per_day = comments_per_day
         if self.comments_per_day != 0:
             self.comments_delay = self.time_in_day / self.comments_per_day
+
+        # update per day
+        self.update_numbers_per_day = 100
+        if self.update_numbers_per_day != 0:
+            self.update_numbers_delay = self.time_in_day / self.update_numbers_per_day
 
         # Don't like if media have more than n likes.
         self.media_max_like = media_max_like
@@ -535,9 +541,9 @@ class InstaBot:
                                 self.write_log(
                                     "Keep calm - It's your own media ;)")
                                 return False
-                            if check_already_liked(self, media_id=self.media_by_tag[i]['node']['id']) == 1:
-                                self.write_log("Keep calm - It's already liked ;)")
-                                return False
+                            # if check_already_liked(self, media_id=self.media_by_tag[i]['node']['id']) == 1:
+                            #     self.write_log("Keep calm - It's already liked ;)")
+                            #     return False
                             try:
                                 if (len(self.media_by_tag[i]['node']['edge_media_to_caption']['edges']) > 1):
                                     caption = self.media_by_tag[i]['node']['edge_media_to_caption'][
@@ -1115,6 +1121,9 @@ class InstaBot:
                     print("follow phase")
                     print("time: " + str(time.time()))
                     print(self.next_iteration["Follow"])
+
+                    self.update_numbers(target)
+
                     if target.target_follows == 'F':
                         self.new_auto_mod_follow_page(target.target)
                     elif target.target_follows == 'L':
@@ -1359,9 +1368,9 @@ class InstaBot:
                                 self.write_log(
                                     "Keep calm - It's your own media ;)")
                                 return False
-                            if check_already_liked(self, media_id=self.media_by_user[i]['node']['id']) == 1:
-                                self.write_log("Keep calm - It's already liked ;)")
-                                return False
+                            # if check_already_liked(self, media_id=self.media_by_user[i]['node']['id']) == 1:
+                            #     self.write_log("Keep calm - It's already liked ;)")
+                            #     return False
                             try:
                                 if (len(self.media_by_user[i]['node']['edge_media_to_caption']['edges']) > 1):
                                     caption = self.media_by_user[i]['node']['edge_media_to_caption'][
@@ -1493,5 +1502,58 @@ class InstaBot:
             insert_media(self, self.media_by_user[0]['node']['id'], str(check_comment.status_code))
             self.media_by_user.remove(self.media_by_user[0])
             return False
+    def update_numbers(self, target):
+        username = target.target
+
+        if time.time() > self.next_iteration["update_numbers"]:
+            print("updating numbers of " + username)
+            followers_of_page = self.get_followers_of_page(username)
+            time.sleep(2)
+            followers_of_me = self.get_followers_of_page(self.user_login)
+            time.sleep(1)
+            followings_of_me = self.get_following_of_page(self.user_login)
+            self.next_iteration["update_numbers"] = time.time() + self.add_time(self.update_numbers_delay)
+            if (followers_of_page == None) or (followings_of_me == None):
+                return
+            page_ids = []
+            my_ids = []
+            my_followings = []
+            for page in followers_of_page:
+                page_ids.append(page['node']['id'])
+            for page in followers_of_me:
+                my_ids.append(page['node']['id'])
+            for page in followings_of_me:
+                my_followings.append(page['node']['id'])
+            intersections = len(set(my_ids) & set(page_ids))
+            non_intersections = len(set(my_followings) & set(page_ids))
+            target.follow_back_num = intersections
+            target.follower_num = non_intersections
+            target.save()
+    def get_followers_of_page(self, username):
+        user_id = self.get_userdetail_by_name(username)['id']
+        #TODO: GET ALL OF THE FOLLOWERS
+        url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
+        followers_of_page = self.s.get(url)
+        if followers_of_page.status_code != 200:
+            return None
+        followers_of_page = json.loads(followers_of_page.text)
+        if not ('data' in followers_of_page):
+            return None
+        followers_of_page = followers_of_page['data']['user']['edge_followed_by']['edges']
+        return followers_of_page
+
+    def get_following_of_page(self, username):
+        user_id = self.get_userdetail_by_name(username)['id']
+        #TODO: GET ALL OF THE FOLLOWERS
+        url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
+        followings_of_page = self.s.get(url) 
+        followings_of_page = json.loads(followings_of_page.text)
+        if not ('data' in followings_of_page):
+            return
+        followings_of_page = followings_of_page['data']['user']['edge_follow']['edges']
+        return followings_of_page
 
 
+            
+
+        
