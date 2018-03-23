@@ -38,6 +38,8 @@ class UserInfo:
     def get_user_id_by_login(self, user_name):
         url_info = self.url_user_info % (user_name)
         info = self.s.get(url_info)
+        if (info.status_code != 200):
+            return
         all_data = json.loads(info.text)
         id_user = all_data['graphql']['user']['id']
         return id_user
