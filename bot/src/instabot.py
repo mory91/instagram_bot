@@ -171,7 +171,7 @@ class InstaBot:
                  second_password=""):
         self.database_name = database_name
         try:
-            self.follows_db = mysql.connector.connect(user='root',
+            self.follows_db = mysql.connector.connect(user='morteza',
                                         password='morteza76',
                                         database=self.database_name)
         except mysql.connector.Error as err:
