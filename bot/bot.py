@@ -67,7 +67,7 @@ def run_bot(bot):
         bot_db = Bot.objects.get(id=bot.id)
         if bot_db.state == 2:
             insta_bot.cleanup()
-            time.sleep(3)
+            time.sleep(10)
             insta_bot = InstaBot(
                 login=bot.username,
                 password=bot.password,

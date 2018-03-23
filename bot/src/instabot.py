@@ -15,12 +15,16 @@ import sys
 import sqlite3
 import time
 import requests
+import mysql.connector
+
+from mysql.connector import errorcode
 from urllib.parse import urlencode
 from .sql_updates import check_and_update, check_already_liked, check_already_followed
 from .sql_updates import insert_media, insert_username, insert_unfollow_count
 from .sql_updates import get_usernames_first, get_usernames, get_username_random
 from .sql_updates import check_and_insert_user_agent
 from fake_useragent import UserAgent
+
 
 class InstaBot:
     """
@@ -42,7 +46,7 @@ class InstaBot:
 
     https://github.com/LevPasha/instabot.py
     """
-    database_name = "follows_db.db"
+    database_name = "bot_db"
     follows_db = None
     follows_db_c = None
 
@@ -139,7 +143,7 @@ class InstaBot:
                  start_at_m=0,
                  end_at_h=23,
                  end_at_m=59,
-                 database_name='follows_db.db',
+                 database_name='bot_db',
                  comment_list=[["this", "the", "your"],
                                ["photo", "picture", "pic", "shot", "snapshot"],
                                ["is", "looks", "feels", "is really"],
@@ -165,13 +169,23 @@ class InstaBot:
                  unfollow_whitelist=[],
                  second_login="",
                  second_password=""):
-
         self.database_name = database_name
-        self.follows_db = sqlite3.connect(database_name, timeout=0, isolation_level=None)
-        self.follows_db_c = self.follows_db.cursor()
+        try:
+            self.follows_db = mysql.connector.connect(user='root',
+                                        password='morteza76',
+                                        database=self.database_name)
+        except mysql.connector.Error as err:
+            if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+                print("Something is wrong with your user name or password")
+            elif err.errno == errorcode.ER_BAD_DB_ERROR:
+                print("Database does not exist")
+            else:
+                print(err)
+        else:
+            self.follows_db_c = self.follows_db.cursor()
         check_and_update(self)
         fake_ua = UserAgent()
-        self.user_agent = check_and_insert_user_agent(self, str(fake_ua.random))
+        self.user_agent = check_and_insert_user_agent(self, str(fake_ua.random), login)
         self.bot_start = datetime.datetime.now()
         self.start_at_h = start_at_h
         self.start_at_m = start_at_m
@@ -211,7 +225,7 @@ class InstaBot:
             self.comments_delay = self.time_in_day / self.comments_per_day
 
         # update per day
-        self.update_numbers_per_day = 100
+        self.update_numbers_per_day = 1000
         if self.update_numbers_per_day != 0:
             self.update_numbers_delay = self.time_in_day / self.update_numbers_per_day
 
@@ -541,9 +555,9 @@ class InstaBot:
                                 self.write_log(
                                     "Keep calm - It's your own media ;)")
                                 return False
-                            # if check_already_liked(self, media_id=self.media_by_tag[i]['node']['id']) == 1:
-                            #     self.write_log("Keep calm - It's already liked ;)")
-                            #     return False
+                            if check_already_liked(self, media_id=self.media_by_tag[i]['node']['id'], username=self.user_login) == 1:
+                                self.write_log("Keep calm - It's already liked ;)")
+                                return False
                             try:
                                 if (len(self.media_by_tag[i]['node']['edge_media_to_caption']['edges']) > 1):
                                     caption = self.media_by_tag[i]['node']['edge_media_to_caption'][
@@ -594,7 +608,7 @@ class InstaBot:
                                                   self.like_counter)
                                     insert_media(self,
                                                  media_id=self.media_by_tag[i]['node']['id'],
-                                                 status="200")
+                                                 status="200", username=self.user_login)
                                     self.write_log(log_string)
                                 elif like.status_code == 400:
                                     log_string = "Not liked: %i" \
@@ -602,7 +616,7 @@ class InstaBot:
                                     self.write_log(log_string)
                                     insert_media(self,
                                                  media_id=self.media_by_tag[i]['node']['id'],
-                                                 status="400")
+                                                 status="400", username=self.user_login)
                                     # Some error. If repeated - can be ban!
                                     if self.error_400 >= self.error_400_to_ban:
                                         # Look like you banned!
@@ -614,7 +628,7 @@ class InstaBot:
                                                  % (like.status_code)
                                     insert_media(self,
                                                  media_id=self.media_by_tag[i]['node']['id'],
-                                                 status=str(like.status_code))
+                                                 status=str(like.status_code), username=self.user_login)
                                     self.write_log(log_string)
                                     return False
                                     # Some error.
@@ -686,7 +700,7 @@ class InstaBot:
                                                         self.follow_counter)
                     self.write_log(log_string)
                     username = self.get_username_by_user_id(user_id=user_id)
-                    insert_username(self, user_id=user_id, username=username)
+                    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
                 return follow
             except:
                 logging.exception("Except on follow!")
@@ -821,7 +835,7 @@ class InstaBot:
         self.write_log("Removing already liked medias..")
         x = 0
         while x < len(self.media_by_tag):
-            if check_already_liked(self, media_id=self.media_by_tag[x]['node']['id']) == 1:
+            if check_already_liked(self, media_id=self.media_by_tag[x]['node']['id'], username=self.user_login) == 1:
                 self.media_by_tag.remove(self.media_by_tag[x])
             else:
                 x += 1
@@ -830,7 +844,7 @@ class InstaBot:
         self.write_log("Removing already liked medias..")
         x = 0
         while x < len(self.media_by_user):
-            if check_already_liked(self, media_id=self.media_by_user[x]['node']['id']) == 1:
+            if check_already_liked(self, media_id=self.media_by_user[x]['node']['id'], username=self.user_login) == 1:
                 self.media_by_user.remove(self.media_by_user[x])
             else:
                 x += 1
@@ -857,11 +871,11 @@ class InstaBot:
                 self.write_log("Keep calm - It's your own profile ;)")
                 return
             # TODO: check already folowed
-            # if check_already_followed(self, user_id=self.media_by_tag[0]['node']["owner"]["id"]) == 1:
-            #     self.write_log("Already followed before " + self.media_by_tag[0]['node']["owner"]["id"])
-            #     self.next_iteration["Follow"] = time.time() + \
-            #                                     self.add_time(self.follow_delay/2)
-            #     return
+            if check_already_followed(self, user_id=self.media_by_tag[0]['node']["owner"]["id"], username=self.user_login) == 1:
+                self.write_log("Already followed before " + self.media_by_tag[0]['node']["owner"]["id"])
+                self.next_iteration["Follow"] = time.time() + \
+                                                self.add_time(self.follow_delay/2)
+                return
             log_string = "Trying to follow: %s" % (
                 self.media_by_tag[0]['node']["owner"]["id"])
             self.write_log(log_string)
@@ -926,14 +940,14 @@ class InstaBot:
                     return True
             return False
         else:
-            insert_media(self, self.media_by_tag[0]['node']['id'], str(check_comment.status_code))
+            insert_media(self, self.media_by_tag[0]['node']['id'], str(check_comment.status_code), username=self.user_login)
             self.media_by_tag.remove(self.media_by_tag[0])
             return False
 
     def auto_unfollow(self):
         checking = True
         while checking:
-            username_row = get_username_random(self)
+            username_row = get_username_random(self, self.user_login)
             if not username_row:
                 self.write_log("Looks like there is nobody to unfollow.")
                 return False
@@ -1036,7 +1050,7 @@ class InstaBot:
             ):
                 self.write_log(current_user)
                 self.unfollow(current_id)
-                insert_unfollow_count(self, user_id=current_id)
+                insert_unfollow_count(self, user_id=current_id, my_username=self.user_login)
 
     def get_media_id_recent_feed(self):
         if self.login_status:
@@ -1368,9 +1382,9 @@ class InstaBot:
                                 self.write_log(
                                     "Keep calm - It's your own media ;)")
                                 return False
-                            # if check_already_liked(self, media_id=self.media_by_user[i]['node']['id']) == 1:
-                            #     self.write_log("Keep calm - It's already liked ;)")
-                            #     return False
+                            if check_already_liked(self, media_id=self.media_by_user[i]['node']['id'], username=self.user_login) == 1:
+                                self.write_log("Keep calm - It's already liked ;)")
+                                return False
                             try:
                                 if (len(self.media_by_user[i]['node']['edge_media_to_caption']['edges']) > 1):
                                     caption = self.media_by_user[i]['node']['edge_media_to_caption'][
@@ -1421,7 +1435,7 @@ class InstaBot:
                                                   self.like_counter)
                                     insert_media(self,
                                                  media_id=self.media_by_user[i]['node']['id'],
-                                                 status="200")
+                                                 status="200", username=self.user_login)
                                     self.write_log(log_string)
                                 elif like.status_code == 400:
                                     log_string = "Not liked: %i" \
@@ -1429,7 +1443,7 @@ class InstaBot:
                                     self.write_log(log_string)
                                     insert_media(self,
                                                  media_id=self.media_by_user[i]['node']['id'],
-                                                 status="400")
+                                                 status="400", username=self.user_login)
                                     # Some error. If repeated - can be ban!
                                     if self.error_400 >= self.error_400_to_ban:
                                         # Look like you banned!
@@ -1441,7 +1455,7 @@ class InstaBot:
                                                  % (like.status_code)
                                     insert_media(self,
                                                  media_id=self.media_by_user[i]['node']['id'],
-                                                 status=str(like.status_code))
+                                                 status=str(like.status_code), username=self.user_login)
                                     self.write_log(log_string)
                                     return False
                                     # Some error.
@@ -1499,7 +1513,7 @@ class InstaBot:
                     return True
             return False
         else:
-            insert_media(self, self.media_by_user[0]['node']['id'], str(check_comment.status_code))
+            insert_media(self, self.media_by_user[0]['node']['id'], str(check_comment.status_code), username=self.user_login)
             self.media_by_user.remove(self.media_by_user[0])
             return False
     def update_numbers(self, target):
