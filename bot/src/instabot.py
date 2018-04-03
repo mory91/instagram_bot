@@ -171,7 +171,7 @@ class InstaBot:
                  second_password=""):
         self.database_name = database_name
         try:
-            self.follows_db = mysql.connector.connect(user='morteza',
+            self.follows_db = mysql.connector.connect(user='root',
                                         password='morteza76',
                                         database=self.database_name)
         except mysql.connector.Error as err:
@@ -1527,7 +1527,7 @@ class InstaBot:
             time.sleep(1)
             followings_of_me = self.get_following_of_page(self.user_login)
             self.next_iteration["update_numbers"] = time.time() + self.add_time(self.update_numbers_delay)
-            if (followers_of_page == None) or (followings_of_me == None):
+            if (followers_of_page is None) or (followings_of_me is None) or (followers_of_me is None):
                 return
             page_ids = []
             my_ids = []
@@ -1544,7 +1544,10 @@ class InstaBot:
             target.follower_num = non_intersections
             target.save()
     def get_followers_of_page(self, username):
-        user_id = self.get_userdetail_by_name(username)['id']
+        user_id = self.get_userdetail_by_name(username)
+        if (user_id == False):
+            return
+        user_id = user_id['id']
         #TODO: GET ALL OF THE FOLLOWERS
         url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
         followers_of_page = self.s.get(url)
@@ -1557,7 +1560,9 @@ class InstaBot:
         return followers_of_page
 
     def get_following_of_page(self, username):
-        user_id = self.get_userdetail_by_name(username)['id']
+        user_id = self.get_userdetail_by_name(username)
+        if (user_id == False):
+            return
         #TODO: GET ALL OF THE FOLLOWERS
         url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
         followings_of_page = self.s.get(url) 

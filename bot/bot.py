@@ -95,12 +95,14 @@ def run_bot(bot):
             pages = get_pages(bot)
             insta_bot.tag_list = tags
             insta_bot.user_list = pages
-           
+        
+        threadLock.acquire()
         insta_bot.new_auto_mod_tag()
         insta_bot.new_auto_mod_page()
+        threadLock.release()
 
 
-
+threadLock = threading.Lock()
 bs = Bot.objects.all()
 bs_list = list(bs)
 if bs != None and len(bs) > 0:

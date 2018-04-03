@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 import sqlite3
 from datetime import datetime, time
-
 def check_and_update(self):
     """ At the Program start, i does look for the sql updates """
     self.follows_db_c.execute('CREATE TABLE IF NOT EXISTS `usernames` ( `username` varchar ( 300 ), `my_username` varchar ( 300 ) );')
+    self.follows_db.commit()
     self.follows_db_c.execute('CREATE TABLE IF NOT EXISTS `medias` (`media_id` varchar(300), `my_username` varchar(300));')
+    self.follows_db.commit()
     table_info = self.follows_db_c.execute('DESC `medias`')
     table_column_status = [o for o in self.follows_db_c if o[0] == "status"]
     if not table_column_status:
@@ -28,6 +29,7 @@ def check_and_update(self):
             ALTER TABLE `usernames_new` RENAME TO `usernames`;
               """
         self.follows_db_c.cmd_query_iter(qry)
+        self.follows_db.commit()
     table_info = self.follows_db_c.execute("desc `usernames`")
     table_column_status = [o for o in self.follows_db_c if o[0] == "unfollow_count"]
     if not table_column_status:
@@ -43,6 +45,7 @@ def check_and_update(self):
             CREATE TABLE `settings` ( `settings_name` TEXT, `settings_val` TEXT, `my_username` varchar ( 300 )  );
               """
         self.follows_db_c.execute(qry)
+        self.follows_db.commit()
     #table_column_status = [o for o in table_info if o[1] == "last_followed_time"]
     #if not table_column_status:
     #    self.follows_db_c.execute("ALTER TABLE usernames ADD COLUMN last_followed_time TEXT")
@@ -71,12 +74,14 @@ def insert_media(self, media_id, status, username):
     now = datetime.now()
     self.follows_db_c.execute("INSERT INTO `medias` (media_id, status, datetime, my_username) VALUES('"+
                               media_id +"','"+ status +"','"+ str(now) +"','" + str(username) + "')")
+    self.follows_db.commit()
 
 def insert_username(self, user_id, username, my_username):
     """ insert user_id to usernames """
     now = datetime.now()
     self.follows_db_c.execute("INSERT INTO usernames (username_id, username, last_followed_time, my_username) \
                                VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+    self.follows_db.commit()
 
 def insert_unfollow_count(self, my_username, user_id=False, username=False):
     """ track unfollow count for new futures """
@@ -85,11 +90,13 @@ def insert_unfollow_count(self, my_username, user_id=False, username=False):
               SET unfollow_count = unfollow_count + 1 \
               WHERE username_id ='"+user_id+"'"
         self.follows_db_c.execute(qry)
+        self.follows_db.commit()
     elif username:
         qry = "UPDATE usernames \
               SET unfollow_count = unfollow_count + 1 \
               WHERE username ='"+username+"' AND my_username='" + my_username + "'"
         self.follows_db_c.execute(qry)
+        self.follows_db.commit()
     else:
         return False
 
@@ -132,4 +139,5 @@ def check_and_insert_user_agent(self, user_agent, my_username):
                     VALUES ('USERAGENT', '%s' , '%s')
                      """ % (user_agent, my_username)
         self.follows_db_c.execute(qry_insert)
+        self.follows_db.commit()
         return check_and_insert_user_agent(self, user_agent, my_username)

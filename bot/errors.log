@@ -27093,3 +27093,2305 @@ Traceback (most recent call last):
   File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
     self._sslobj.do_handshake()
 KeyboardInterrupt
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+KeyboardInterrupt
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 1252, in connect
+    super().connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 693, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1297, in https_open
+    context=self._context, check_hostname=self._check_hostname)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -2] Name or service not known>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 154, in load
+    for item in get_browsers(verify_ssl=verify_ssl):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 97, in get_browsers
+    html = get(settings.BROWSERS_STATS_PAGE, verify_ssl=verify_ssl)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+WARNING:fake_useragent:Error occurred during loading data. Trying to use cache server http://d2g6u4gh6d9rq0.cloudfront.net/browsers/fake_useragent_0.1.10.json
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/urllib/request.py", line 1254, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1106, in request
+    self._send_request(method, url, body, headers)
+  File "/usr/lib/python3.5/http/client.py", line 1151, in _send_request
+    self.endheaders(body)
+  File "/usr/lib/python3.5/http/client.py", line 1102, in endheaders
+    self._send_output(message_body)
+  File "/usr/lib/python3.5/http/client.py", line 934, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.5/http/client.py", line 877, in send
+    self.connect()
+  File "/usr/lib/python3.5/http/client.py", line 849, in connect
+    (self.host,self.port), self.timeout, self.source_address)
+  File "/usr/lib/python3.5/socket.py", line 711, in create_connection
+    raise err
+  File "/usr/lib/python3.5/socket.py", line 702, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 67, in get
+    context=context,
+  File "/usr/lib/python3.5/urllib/request.py", line 163, in urlopen
+    return opener.open(url, data, timeout)
+  File "/usr/lib/python3.5/urllib/request.py", line 466, in open
+    response = self._open(req, data)
+  File "/usr/lib/python3.5/urllib/request.py", line 484, in _open
+    '_open', req)
+  File "/usr/lib/python3.5/urllib/request.py", line 444, in _call_chain
+    result = func(*args)
+  File "/usr/lib/python3.5/urllib/request.py", line 1282, in http_open
+    return self.do_open(http.client.HTTPConnection, req)
+  File "/usr/lib/python3.5/urllib/request.py", line 1256, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error timed out>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 166, in load
+    verify_ssl=verify_ssl,
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 122, in get_browser_versions
+    verify_ssl=verify_ssl,
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/fake_useragent/utils.py", line 84, in get
+    raise FakeUserAgentError('Maximum amount of retries reached')
+fake_useragent.errors.FakeUserAgentError: Maximum amount of retries reached
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 386, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 347, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/packages/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 386, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 2, in raise_from
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 266, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+requests.packages.urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 440, in get_username_by_user_id
+    r = self.s.get(url_info, headers="")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 473, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 83, in create_connection
+    raise err
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f5ef4f74ef0>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/users/7307702582/info/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f5ef4f74ef0>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 440, in get_username_by_user_id
+    r = self.s.get(url_info, headers="")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/users/7307702582/info/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f5ef4f74ef0>: Failed to establish a new connection: [Errno 101] Network is unreachable',))
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+KeyboardInterrupt
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 745, in __init__
+    server_hostname)
+KeyboardInterrupt
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 704, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 81, in insert_username
+    self.follows_db_c.commit()
+AttributeError: 'MySQLCursor' object has no attribute 'commit'
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 704, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 704, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 78, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/cursor.py", line 559, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 494, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/mysql/connector/connection.py", line 396, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 1205 (HY000): Lock wait timeout exceeded; try restarting transaction
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 474, in request
+    prep = self.prepare_request(req)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 407, in prepare_request
+    hooks=merge_hooks(request.hooks, self.hooks),
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 304, in prepare
+    self.prepare_cookies(cookies)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 567, in prepare_cookies
+    cookie_header = get_cookie_header(self._cookies, self)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/cookies.py", line 145, in get_cookie_header
+    jar.add_cookie_header(r)
+  File "/usr/lib/python3.5/http/cookiejar.py", line 1346, in add_cookie_header
+    cookies = self._cookies_for_request(request)
+  File "/usr/lib/python3.5/http/cookiejar.py", line 1272, in _cookies_for_request
+    cookies.extend(self._cookies_for_domain(domain, request))
+  File "/usr/lib/python3.5/http/cookiejar.py", line 1252, in _cookies_for_domain
+    if not self._policy.domain_return_ok(domain, request):
+  File "/usr/lib/python3.5/http/cookiejar.py", line 1172, in domain_return_ok
+    req_host, erhn = eff_request_host(request)
+  File "/usr/lib/python3.5/http/cookiejar.py", line 631, in eff_request_host
+    erhn = req_host = request_host(request)
+  File "/usr/lib/python3.5/http/cookiejar.py", line 616, in request_host
+    url = request.get_full_url()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/cookies.py", line 61, in get_full_url
+    parsed = urlparse(self._r.url)
+  File "/usr/lib/python3.5/urllib/parse.py", line 294, in urlparse
+    url, scheme, _coerce_result = _coerce_args(url, scheme)
+  File "/usr/lib/python3.5/urllib/parse.py", line 113, in _coerce_args
+    return args + (_noop,)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 324, in ssl_wrap_socket
+    return context.wrap_socket(sock, server_hostname=server_hostname)
+  File "/usr/lib/python3.5/ssl.py", line 377, in wrap_socket
+    _context=self)
+  File "/usr/lib/python3.5/ssl.py", line 752, in __init__
+    self.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 988, in do_handshake
+    self._sslobj.do_handshake()
+  File "/usr/lib/python3.5/ssl.py", line 633, in do_handshake
+    self._sslobj.do_handshake()
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    self.write_log("Logout success!")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 641, in send
+    r.content
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 797, in content
+    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 719, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 432, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 380, in read
+    data = self._fp.read(amt)
+  File "/usr/lib/python3.5/http/client.py", line 448, in read
+    n = self.readinto(b)
+  File "/usr/lib/python3.5/http/client.py", line 488, in readinto
+    n = self.fp.readinto(b)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    self.write_log("Logout success!")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 326, in connect
+    ssl_context=context)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/ssl_.py", line 308, in ssl_wrap_socket
+    context.load_verify_locations(ca_certs, ca_cert_dir)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    self.write_log("Logout success!")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 641, in send
+    r.content
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 797, in content
+    self._content = bytes().join(self.iter_content(CONTENT_CHUNK_SIZE)) or bytes()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/models.py", line 719, in generate
+    for chunk in self.raw.stream(chunk_size, decode_content=True):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 432, in stream
+    data = self.read(amt=amt, decode_content=decode_content)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/response.py", line 380, in read
+    data = self._fp.read(amt)
+  File "/usr/lib/python3.5/http/client.py", line 448, in read
+    n = self.readinto(b)
+  File "/usr/lib/python3.5/http/client.py", line 488, in readinto
+    n = self.fp.readinto(b)
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 358, in logout
+    self.write_log("Logout success!")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 482, in get_userdetail_by_name
+    all_data = json.loads(r.text)
+  File "/usr/lib/python3.5/json/__init__.py", line 319, in loads
+    return _default_decoder.decode(s)
+  File "/usr/lib/python3.5/json/decoder.py", line 339, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "/usr/lib/python3.5/json/decoder.py", line 357, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+ERROR:root:Except on get_username_by_user_id
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72b5b3c128>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/users/2300777037/info/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72b5b3c128>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 440, in get_username_by_user_id
+    r = self.s.get(url_info, headers="")
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='i.instagram.com', port=443): Max retries exceeded with url: /api/v1/users/2300777037/info/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72b5b3c128>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 703, in follow
+    insert_username(self, user_id=user_id, username=username, my_username=self.user_login)
+  File "/home/morteza/Code/instagram_bot/bot/src/sql_updates.py", line 83, in insert_username
+    VALUES('"+user_id+"','"+username+"','"+ str(now) + "','" + str(my_username) +"')")
+TypeError: Can't convert 'bool' object to str implicitly
+ERROR:root:Except on follow!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd1123c8>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.instagram.com', port=443): Max retries exceeded with url: /web/friendships/1449340956/follow/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd1123c8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 696, in follow
+    follow = self.s.post(url_follow)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.instagram.com', port=443): Max retries exceeded with url: /web/friendships/1449340956/follow/ (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd1123c8>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+ERROR:root:Except on get_userinfo_by_name
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 141, in _new_conn
+    (self.host, self.port), self.timeout, **extra_kw)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/usr/lib/python3.5/socket.py", line 732, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 345, in _make_request
+    self._validate_conn(conn)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 844, in _validate_conn
+    conn.connect()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 284, in connect
+    conn = self._new_conn()
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connection.py", line 150, in _new_conn
+    self, "Failed to establish a new connection: %s" % e)
+requests.packages.urllib3.exceptions.NewConnectionError: <requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd148f28>: Failed to establish a new connection: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 649, in urlopen
+    _stacktrace=sys.exc_info()[2])
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/util/retry.py", line 376, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+requests.packages.urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.instagram.com', port=443): Max retries exceeded with url: /chi_chi_niii/?__a=1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd148f28>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 481, in get_userdetail_by_name
+    r = self.s.get(url_info)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 501, in get
+    return self.request('GET', url, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 487, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.instagram.com', port=443): Max retries exceeded with url: /chi_chi_niii/?__a=1 (Caused by NewConnectionError('<requests.packages.urllib3.connection.VerifiedHTTPSConnection object at 0x7f72bd148f28>: Failed to establish a new connection: [Errno -2] Name or service not known',))
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
+ERROR:root:Logout error!
+Traceback (most recent call last):
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 379, in _make_request
+    httplib_response = conn.getresponse(buffering=True)
+TypeError: getresponse() got an unexpected keyword argument 'buffering'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/morteza/Code/instagram_bot/bot/src/instabot.py", line 357, in logout
+    logout = self.s.post(self.url_logout, data=logout_post)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 535, in post
+    return self.request('POST', url, data=data, json=json, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 488, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in send
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 630, in <listcomp>
+    history = [resp for resp in gen] if allow_redirects else []
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 190, in resolve_redirects
+    **adapter_kwargs
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/sessions.py", line 609, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/adapters.py", line 423, in send
+    timeout=timeout
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 600, in urlopen
+    chunked=chunked)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/requests/packages/urllib3/connectionpool.py", line 382, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.5/http/client.py", line 1197, in getresponse
+    response.begin()
+  File "/usr/lib/python3.5/http/client.py", line 297, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.5/http/client.py", line 258, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/lib/python3.5/socket.py", line 575, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/lib/python3.5/ssl.py", line 929, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 791, in read
+    return self._sslobj.read(len, buffer)
+  File "/usr/lib/python3.5/ssl.py", line 575, in read
+    v = self._sslobj.read(len, buffer)
+KeyboardInterrupt
