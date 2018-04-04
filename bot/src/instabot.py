@@ -1289,6 +1289,8 @@ class InstaBot:
             if not ('data' in likers_of_post):
                 return
             likers_of_post = likers_of_post['data']['shortcode_media']['edge_liked_by']['edges']
+            if (len(likers_of_post) <= 0):
+                return
             likers_of_post = random.choice(likers_of_post)
             if self.follow_per_day != 0:
                 if likers_of_post['node']["id"] == self.user_id:
@@ -1549,7 +1551,7 @@ class InstaBot:
             return
         user_id = user_id['id']
         #TODO: GET ALL OF THE FOLLOWERS
-        url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
+        url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
         followers_of_page = self.s.get(url)
         if followers_of_page.status_code != 200:
             return None
@@ -1563,8 +1565,9 @@ class InstaBot:
         user_id = self.get_userdetail_by_name(username)
         if (user_id == False):
             return
+        user_id = user_id['id']
         #TODO: GET ALL OF THE FOLLOWERS
-        url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":10000}' 
+        url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + str('{"id":' + '"' + str(user_id) + '"' + ',"first":1000}')
         followings_of_page = self.s.get(url) 
         followings_of_page = json.loads(followings_of_page.text)
         if not ('data' in followings_of_page):
