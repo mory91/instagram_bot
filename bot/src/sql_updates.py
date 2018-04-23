@@ -21,6 +21,7 @@ def check_and_update(self):
         self.follows_db_c.execute("ALTER TABLE medias ADD COLUMN code TEXT")
     table_info = self.follows_db_c.execute("desc `usernames`")
     table_column_status = [o for o in self.follows_db_c if o[0] == "username_id"]
+    
     if not table_column_status:
         qry = """
             CREATE TABLE `usernames_new` ( `username_id` varchar ( 300 ), `username` TEXT, `my_username` varchar ( 300 )  );
@@ -28,7 +29,7 @@ def check_and_update(self):
             DROP TABLE `usernames`;
             ALTER TABLE `usernames_new` RENAME TO `usernames`;
               """
-        self.follows_db_c.cmd_query_iter(qry)
+        self.follows_db.cmd_query_iter(qry)
         self.follows_db.commit()
     table_info = self.follows_db_c.execute("desc `usernames`")
     table_column_status = [o for o in self.follows_db_c if o[0] == "unfollow_count"]

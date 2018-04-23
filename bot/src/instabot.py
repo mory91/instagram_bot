@@ -16,6 +16,7 @@ import sqlite3
 import time
 import requests
 import mysql.connector
+import re
 
 from mysql.connector import errorcode
 from urllib.parse import urlencode
@@ -60,7 +61,7 @@ class InstaBot:
     url_login = 'https://www.instagram.com/accounts/login/ajax/'
     url_logout = 'https://www.instagram.com/accounts/logout/'
     url_media_detail = 'https://www.instagram.com/p/%s/?__a=1'
-    url_user_detail = 'https://www.instagram.com/%s/?__a=1'
+    url_user_detail = 'https://www.instagram.com/%s/'
     api_user_detail = 'https://i.instagram.com/api/v1/users/%s/info/'
     url_graphql = 'https://www.instagram.com/graphql/query/'
     graphql_follower_hash = '37479f2b8209594dde7facb0d904896a'
@@ -129,6 +130,8 @@ class InstaBot:
 
     cached_info = {}
     false_bot = {}
+
+    csrf_token = ""
 
     def __init__(self,
                  login,
@@ -455,7 +458,7 @@ class InstaBot:
                 url_info = self.url_user_detail % (username)
                 try:
                     r = self.s.get(url_info)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
                     user_info = all_data['graphql']
                     follows = user_info['edge_follow']['count']
                     follower = user_info['edge_followed_by']['count']
@@ -479,7 +482,7 @@ class InstaBot:
                 url_info = self.url_user_detail % (username)
                 try:
                     r = self.s.get(url_info)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
                     user_info = all_data['graphql']['user']
                     return user_info
                 except:
@@ -496,7 +499,7 @@ class InstaBot:
                 url_info = self.url_user_detail % (username)
                 try:
                     r = self.s.get(url_info)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
                     user_info = all_data['graphql']
                     return user_info
                 except:
@@ -513,7 +516,8 @@ class InstaBot:
                 url_info = self.url_user_detail % (username)
                 try:
                     r = self.s.get(url_info)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
+
                     user_info = all_data
                     return user_info
                 except:
@@ -977,7 +981,7 @@ class InstaBot:
                 url_tag = self.url_user_detail % (current_user)
                 try:
                     r = self.s.get(url_tag)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
 
                     user_info = all_data['graphql']['user']
                     i = 0
@@ -1221,7 +1225,7 @@ class InstaBot:
         if time.time() > self.next_iteration["Follow"]:
             user_id = self.get_userdetail_by_name(username)['id']
             print("F F of " + username)
-            url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
+            url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":50}' 
             followers_of_page = self.s.get(url) 
             followers_of_page = json.loads(followers_of_page.text)
             if not ('data' in followers_of_page):
@@ -1249,7 +1253,7 @@ class InstaBot:
     def new_auto_mod_follow_page_blocked(self, username):
         user_id = self.false_bot.get_userdetail_by_name(username)['id']
         print("F F of " + username)
-        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
+        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":50}' 
         followers_of_page = self.false_bot.s.get(url) 
         followers_of_page = json.loads(followers_of_page.text)
         if not ('data' in followers_of_page):
@@ -1283,7 +1287,7 @@ class InstaBot:
             '''TODO:khate pain random she'''
             edge_chosed = random.choice(user_details['user']['edge_owner_to_timeline_media']['edges'])
             post_code = edge_chosed['node']['shortcode']
-            url = self.url_graphql + "?query_hash=" + self.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":1000}' 
+            url = self.url_graphql + "?query_hash=" + self.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":50}' 
             likers_of_post = self.s.get(url) 
             likers_of_post = json.loads(likers_of_post.text)
             if not ('data' in likers_of_post):
@@ -1316,7 +1320,7 @@ class InstaBot:
         if (user_details['user']['edge_owner_to_timeline_media']['count'] <= 0) and (len(user_details['user']['edge_owner_to_timeline_media']['edges']) > 0):
             return
         post_code = user_details['user']['edge_owner_to_timeline_media']['edges'][0]['node']['shortcode']
-        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":1000}' 
+        url = self.false_bot.url_graphql + "?query_hash=" + self.false_bot.graphql_likers_hash + "&variables=" + '{"shortcode":' + '"' + post_code + '"' + ',"first":50}' 
         likers_of_post = self.false_bot.s.get(url) 
         likers_of_post = json.loads(likers_of_post.text)
         if not ('data' in likers_of_post):
@@ -1487,7 +1491,7 @@ class InstaBot:
                 url_user = self.url_user_detail % (username)
                 try:
                     r = self.s.get(url_user)
-                    all_data = json.loads(r.text)
+                    all_data = json.loads(re.search('{"activity.+show_app', r.text, re.DOTALL).group(0)+'":""}')['entry_data']['ProfilePage'][0]
                     self.media_by_user = list(all_data['graphql']['user']['edge_owner_to_timeline_media']['edges'])
                 except:
                     self.media_by_user = []
@@ -1551,7 +1555,7 @@ class InstaBot:
             return
         user_id = user_id['id']
         #TODO: GET ALL OF THE FOLLOWERS
-        url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":1000}' 
+        url = self.url_graphql + "?query_hash=" + self.graphql_follower_hash + "&variables=" + '{"id":' + '"' + user_id + '"' + ',"first":50}' 
         followers_of_page = self.s.get(url)
         if followers_of_page.status_code != 200:
             return None
@@ -1567,10 +1571,10 @@ class InstaBot:
             return
         user_id = user_id['id']
         #TODO: GET ALL OF THE FOLLOWERS
-        url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + str('{"id":' + '"' + str(user_id) + '"' + ',"first":1000}')
-        followings_of_page = self.s.get(url) 
+        url = self.url_graphql + "?query_hash=" + self.graphql_following_hash + "&variables=" + str('{"id":' + '"' + str(user_id) + '"' + ',"first":50}')
+        followings_of_page = self.s.get(url)
         followings_of_page = json.loads(followings_of_page.text)
-        if not ('data' in followings_of_page):
+        if (not ('data' in followings_of_page)) and (not ('user' in followings_of_page['user'])):
             return
         followings_of_page = followings_of_page['data']['user']['edge_follow']['edges']
         return followings_of_page
