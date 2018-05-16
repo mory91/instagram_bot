@@ -53,7 +53,7 @@ def worker(bot):
     instaPass = bot.password
     smartTags = tags
     print("MULTI - Started as",instaUser,"at",datetime.datetime.now().strftime("%H:%M:%S"))
-    session = InstaPy(username=instaUser, password=instaPass)
+    session = InstaPy(username=instaUser, password=instaPass, headless_browser=True)
     session.login()
 
     while 1:
