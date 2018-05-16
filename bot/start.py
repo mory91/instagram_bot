@@ -61,7 +61,7 @@ def worker(bot):
         bot_db = Bot.objects.get(id=bot.id)
         smartTags = tags
         
-        session.set_dont_unfollow_active_users(enabled=True, posts=7)
+        # session.set_dont_unfollow_active_users(enabled=True, posts=7)
         session.set_user_interact(amount=2, randomize=True, percentage=20, media='Photo')
         session.set_relationship_bounds(enabled=True,
                 potency_ratio=-1.21,
@@ -80,8 +80,8 @@ def worker(bot):
         #     session.like_by_locations(followLocation[selection], amount=10)
         #     print("MULTI -",instaUser[selection],"finished liking by location",datetime.datetime.now().strftime("%H:%M:%S"))
 
-        session.unfollow_users(amount=random.randint(7,10), sleep_delay=(random.randint(44,111)))
-        print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
+        # session.unfollow_users(amount=random.randint(7,10), sleep_delay=(random.randint(44,111)))
+        # print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
         
         # Followers of followers
         if followersToFollow:
