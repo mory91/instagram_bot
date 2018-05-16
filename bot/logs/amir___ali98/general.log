@@ -1,0 +1,124 @@
+ERROR [2018-05-04 19:37:48] [amir___ali98]  Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+Traceback (most recent call last):
+  File "/home/morteza/Code/InstaPy/instapy/instapy.py", line 276, in set_selenium_local_session
+    chrome_options=chrome_options)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/chrome/webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+ERROR [2018-05-04 19:40:03] [amir___ali98]  Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+Traceback (most recent call last):
+  File "/home/morteza/Code/InstaPy/instapy/instapy.py", line 276, in set_selenium_local_session
+    chrome_options=chrome_options)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/chrome/webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+ERROR [2018-05-04 19:40:34] [amir___ali98]  Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+Traceback (most recent call last):
+  File "/home/morteza/Code/InstaPy/instapy/instapy.py", line 276, in set_selenium_local_session
+    chrome_options=chrome_options)
+  File "/home/morteza/anaconda3/lib/python3.6/site-packages/selenium/webdriver/chrome/webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/morteza/anaconda3/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/morteza/anaconda3/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "/home/morteza/anaconda3/lib/python3.6/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "/home/morteza/anaconda3/lib/python3.6/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+ERROR [2018-05-04 19:41:14] [amir___ali98]  Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+Traceback (most recent call last):
+  File "/home/morteza/Code/InstaPy/instapy/instapy.py", line 276, in set_selenium_local_session
+    chrome_options=chrome_options)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/chrome/webdriver.py", line 69, in __init__
+    desired_capabilities=desired_capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 90, in __init__
+    self.start_session(desired_capabilities, browser_profile)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 177, in start_session
+    response = self.execute(Command.NEW_SESSION, capabilities)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/webdriver.py", line 236, in execute
+    self.error_handler.check_response(response)
+  File "/home/morteza/venvs/instapy/lib/python3.5/site-packages/selenium/webdriver/remote/errorhandler.py", line 192, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: session not created exception: Chrome version must be >= 65.0.3325.0
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-04 19:49:14] [amir___ali98]  Session started - 2018-05-04 19:49:14
+INFO [2018-05-04 19:49:28] [amir___ali98]  Logged in successfully!
+INFO [2018-05-04 19:49:29] [amir___ali98]  Tag [1/1]
+INFO [2018-05-04 19:49:29] [amir___ali98]  --> b'natgeo'
+INFO [2018-05-04 19:49:38] [amir___ali98]  desired amount: 1  |  top posts [disabled]: 9  |  possible posts: 11354442
+INFO [2018-05-04 19:49:44] [amir___ali98]  [1/1]
+INFO [2018-05-04 19:49:44] [amir___ali98]  https://www.instagram.com/p/BiXDijOgpo8/?tagged=natgeo
+INFO [2018-05-04 19:49:50] [amir___ali98]  Image from: b'alexamodio_'
+INFO [2018-05-04 19:49:57] [amir___ali98]  User: alexamodio_ >> followers: 953  |  following: 756  |  relationship ratio: 0.79
+INFO [2018-05-04 19:49:57] [amir___ali98]  --> Image not liked: b'alexamodio_ is not a massive follower with the relationship ratio of 0.79'
+INFO [2018-05-04 19:49:57] [amir___ali98]  Liked: 0
+INFO [2018-05-04 19:49:57] [amir___ali98]  Already Liked: 0
+INFO [2018-05-04 19:49:57] [amir___ali98]  Inappropriate: 1
+INFO [2018-05-04 19:49:57] [amir___ali98]  Commented: 0
+INFO [2018-05-04 19:49:57] [amir___ali98]  Followed: 0
+INFO [2018-05-04 19:49:57] [amir___ali98]  Session ended - 2018-05-04 19:49:57
+INFO [2018-05-04 19:49:57] [amir___ali98]  --------------------
+
+
+INFO [2018-05-15 10:50:52] [amir___ali98]  Session started - 2018-05-15 10:50:52
+INFO [2018-05-15 10:50:52] [_Gray__world_]  Session started - 2018-05-15 10:50:52
+WARNING [2018-05-15 10:50:56] [_Gray__world_]  Could not locate Chrome: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-15 10:50:56] [_Gray__world_]  Session ended - 2018-05-15 10:50:56
+INFO [2018-05-15 10:50:56] [_Gray__world_]  --------------------
+
+
+WARNING [2018-05-15 10:50:56] [amir___ali98]  Could not locate Chrome: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-15 10:50:56] [amir___ali98]  Session ended - 2018-05-15 10:50:56
+INFO [2018-05-15 10:50:56] [amir___ali98]  --------------------
+
+
+INFO [2018-05-15 10:51:05] [amir___ali98]  Session started - 2018-05-15 10:51:05
+WARNING [2018-05-15 10:51:17] [amir___ali98]  Could not locate Chrome: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-15 10:51:17] [amir___ali98]  Session ended - 2018-05-15 10:51:17
+INFO [2018-05-15 10:51:17] [amir___ali98]  --------------------
+
+
+INFO [2018-05-15 11:04:42] [_Gray__world_]  Session started - 2018-05-15 11:04:42
+INFO [2018-05-15 11:04:42] [keyhan.a]  Session started - 2018-05-15 11:04:42
+INFO [2018-05-15 11:04:42] [amir___ali98]  Session started - 2018-05-15 11:04:42

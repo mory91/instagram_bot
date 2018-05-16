@@ -1,0 +1,351 @@
+INFO [2018-05-15 19:58:37] [alias.gallery]  Session started - 2018-05-15 19:58:37
+INFO [2018-05-15 19:59:43] [_Gray__world_]  Session started - 2018-05-15 19:59:43
+INFO [2018-05-15 20:00:16] [_Gray__world_]  Session started - 2018-05-15 20:00:16
+CRITICAL [2018-05-15 20:01:03] [_Gray__world_]  Wrong login data!
+INFO [2018-05-15 20:01:10] [_Gray__world_]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-15 20:01:22] [aliasring]  Session started - 2018-05-15 20:01:22
+INFO [2018-05-15 20:01:36] [aliasring]  Logged in successfully!
+INFO [2018-05-15 20:01:42] [aliasring]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-15 20:02:04] [aliasring]  Post 1  |  Likers: found 124, catched 124
+INFO [2018-05-15 20:02:28] [Alias.naghsh]  Session started - 2018-05-15 20:02:28
+INFO [2018-05-15 20:02:34] [aliasring]  Post 2  |  Likers: found 180, catched 180
+INFO [2018-05-15 20:02:43] [Alias.naghsh]  Logged in successfully!
+INFO [2018-05-15 20:02:49] [Alias.naghsh]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-15 20:02:57] [aliasring]  Post 3  |  Likers: found 106, catched 106
+INFO [2018-05-15 20:03:06] [Alias.naghsh]  Post 1  |  Likers: found 77, catched 77
+INFO [2018-05-15 20:03:22] [aliasring]  Post 4  |  Likers: found 125, catched 124
+INFO [2018-05-15 20:03:26] [Alias.naghsh]  Post 2  |  Likers: found 87, catched 87
+INFO [2018-05-15 20:03:40] [aliasring]  Post 5  |  Likers: found 58, catched 58
+INFO [2018-05-15 20:03:46] [Alias.naghsh]  Post 3  |  Likers: found 75, catched 75
+INFO [2018-05-15 20:03:59] [aliasring]  Post 6  |  Likers: found 75, catched 75
+INFO [2018-05-15 20:04:04] [Alias.naghsh]  Post 4  |  Likers: found 62, catched 62
+INFO [2018-05-15 20:04:14] [aliasring]  Post 7  |  Likers: found 47, catched 47
+INFO [2018-05-15 20:04:16] [aliasring]  Gathered total of 351 unique active followers from the latest 7 posts in 2 minutes and 34 seconds
+INFO [2018-05-15 20:04:20] [Alias.naghsh]  Post 5  |  Likers: found 52, catched 52
+INFO [2018-05-15 20:04:21] [aliasring]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:04:21] [aliasring]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:04:21] [aliasring]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:04:21] [aliasring]  New link found...
+INFO [2018-05-15 20:04:21] [aliasring]  [0 posts liked /6 amount]
+INFO [2018-05-15 20:04:21] [aliasring]  https://www.instagram.com/p/Biy4ormFtAf/
+INFO [2018-05-15 20:04:24] [aliasring]  Image from: b'erfan_halghe'
+INFO [2018-05-15 20:04:29] [aliasring]  User: erfan_halghe >> followers: 1612  |  following: 65  |  relationship ratio: 0.04
+INFO [2018-05-15 20:04:29] [aliasring]  --> Image not liked: b"User erfan_halghe's following count is less than minimum limit"
+WARNING [2018-05-15 20:04:29] [aliasring]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:04:29] [aliasring]  New link found...
+INFO [2018-05-15 20:04:29] [aliasring]  [0 posts liked /6 amount]
+INFO [2018-05-15 20:04:29] [aliasring]  https://www.instagram.com/p/BizcweaFQb0/
+INFO [2018-05-15 20:04:32] [aliasring]  Image from: b'halghe.irr'
+INFO [2018-05-15 20:04:35] [Alias.naghsh]  Post 6  |  Likers: found 40, catched 40
+INFO [2018-05-15 20:04:36] [aliasring]  User: halghe.irr >> followers: 2544  |  following: 57  |  relationship ratio: 0.02
+INFO [2018-05-15 20:04:36] [aliasring]  --> Image not liked: b"User halghe.irr's following count is less than minimum limit"
+INFO [2018-05-15 20:04:36] [aliasring]  New link found...
+INFO [2018-05-15 20:04:36] [aliasring]  [0 posts liked /6 amount]
+INFO [2018-05-15 20:04:36] [aliasring]  https://www.instagram.com/p/Biv8_4VhS9b/
+INFO [2018-05-15 20:04:39] [aliasring]  Image from: b'angoshtar.amir'
+INFO [2018-05-15 20:04:44] [aliasring]  User: angoshtar.amir >> followers: 19200  |  following: 4816  |  relationship ratio: 0.25
+INFO [2018-05-15 20:04:44] [aliasring]  --> Image not liked: b"User angoshtar.amir's followers count exceeds maximum limit"
+INFO [2018-05-15 20:04:44] [aliasring]  New link found...
+INFO [2018-05-15 20:04:44] [aliasring]  [0 posts liked /6 amount]
+INFO [2018-05-15 20:04:44] [aliasring]  https://www.instagram.com/p/BiwNsOrlPXZ/
+INFO [2018-05-15 20:04:46] [aliasring]  Image from: b'aroosjoona'
+INFO [2018-05-15 20:04:51] [Alias.naghsh]  Post 7  |  Likers: found 52, catched 52
+INFO [2018-05-15 20:04:53] [Alias.naghsh]  Gathered total of 197 unique active followers from the latest 7 posts in 2 minutes and 4 seconds
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WARNING [2018-05-15 20:04:57] [Alias.naghsh]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:04:57] [Alias.naghsh]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:04:57] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:04:57] [Alias.naghsh]  https://www.instagram.com/p/Biv1i4yD9fT/
+INFO [2018-05-15 20:05:00] [Alias.naghsh]  Image from: b'venoos_elahe___55'
+INFO [2018-05-15 20:05:03] [Alias.naghsh]  User: venoos_elahe___55 >> followers: 576  |  following: 596  |  relationship ratio: 1.03
+INFO [2018-05-15 20:05:03] [Alias.naghsh]  --> Image not liked: b'venoos_elahe___55 is not a massive follower with the relationship ratio of 1.03'
+WARNING [2018-05-15 20:05:03] [Alias.naghsh]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:05:03] [Alias.naghsh]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:05:03] [Alias.naghsh]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:05:03] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:05:09] [Alias.naghsh]  https://www.instagram.com/p/BiwPo1Jntx_/
+INFO [2018-05-15 20:05:12] [Alias.naghsh]  Image from: b'z.z.s.t.2'
+INFO [2018-05-15 20:05:15] [aliasring]  User: aroosjoona >> followers: 773  |  following: unknown  |  relationship ratio: unknown
+INFO [2018-05-15 20:05:15] [aliasring]  Link: b'https://www.instagram.com/p/BiwNsOrlPXZ/'
+INFO [2018-05-15 20:05:15] [aliasring]  Description: b'#\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3\xd8\xa9 #\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3_\xd8\xb2\xdb\x8c\xd8\xa8\xd8\xa7 #\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3\xdb\x8c #\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xda\x86\xd8\xb4\xd9\x85 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd8\xb5\xd9\x88\xd8\xb1\xd8\xaa #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd9\x84\xd8\xa7\xdb\x8c\xd8\xaa #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd8\xad\xd8\xb1\xd9\x81\xd9\x87_\xd8\xa7\xdb\x8c #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3'
+INFO [2018-05-15 20:05:17] [Alias.naghsh]  User: z.z.s.t.2 >> followers: 533  |  following: 623  |  relationship ratio: 1.17
+INFO [2018-05-15 20:05:17] [Alias.naghsh]  --> Image not liked: b'z.z.s.t.2 is not a massive follower with the relationship ratio of 1.17'
+INFO [2018-05-15 20:05:17] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:05:17] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:05:17] [Alias.naghsh]  https://www.instagram.com/p/Bivy7w6Dd9O/
+INFO [2018-05-15 20:05:17] [aliasring]  --> Image Liked!
+INFO [2018-05-15 20:05:19] [Alias.naghsh]  Image from: b'venoos_elahe___55'
+INFO [2018-05-15 20:05:19] [aliasring]  --> User followed: ['aroosjoona']
+INFO [2018-05-15 20:05:19] [aliasring]  Username [1/1]
+INFO [2018-05-15 20:05:19] [aliasring]  --> b'aroosjoona'
+INFO [2018-05-15 20:05:19] [aliasring]  Getting aroosjoona image list...
+INFO [2018-05-15 20:05:24] [Alias.naghsh]  User: venoos_elahe___55 >> followers: 576  |  following: 596  |  relationship ratio: 1.03
+INFO [2018-05-15 20:05:24] [Alias.naghsh]  --> Image not liked: b'venoos_elahe___55 is not a massive follower with the relationship ratio of 1.03'
+WARNING [2018-05-15 20:05:24] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:05:24] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:05:24] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:05:24] [Alias.naghsh]  https://www.instagram.com/p/BizBrclDoNQ/
+INFO [2018-05-15 20:05:26] [Alias.naghsh]  Image from: b'venoos_elahe___55'
+INFO [2018-05-15 20:05:29] [Alias.naghsh]  User: venoos_elahe___55 >> followers: 576  |  following: 596  |  relationship ratio: 1.03
+INFO [2018-05-15 20:05:29] [Alias.naghsh]  --> Image not liked: b'venoos_elahe___55 is not a massive follower with the relationship ratio of 1.03'
+INFO [2018-05-15 20:05:29] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:05:29] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:05:29] [Alias.naghsh]  https://www.instagram.com/p/BizU9bbjPfh/
+INFO [2018-05-15 20:05:32] [Alias.naghsh]  Image from: b'ksa432778'
+INFO [2018-05-15 20:05:37] [Alias.naghsh]  User: ksa432778 >> followers: 2429  |  following: 1086  |  relationship ratio: 0.45
+INFO [2018-05-15 20:05:37] [Alias.naghsh]  --> Image not liked: b'ksa432778 is not a massive follower with the relationship ratio of 0.45'
+WARNING [2018-05-15 20:05:37] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:05:37] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:05:37] [Alias.naghsh]  [0 posts liked /7 amount]
+INFO [2018-05-15 20:05:37] [Alias.naghsh]  https://www.instagram.com/p/BivmhgTAO2Z/
+INFO [2018-05-15 20:05:39] [Alias.naghsh]  Image from: b'hamid__mirzakhani'
+INFO [2018-05-15 20:05:44] [Alias.naghsh]  User: hamid__mirzakhani >> followers: 1406  |  following: 2031  |  relationship ratio: 1.44
+INFO [2018-05-15 20:05:44] [Alias.naghsh]  Link: b'https://www.instagram.com/p/BivmhgTAO2Z/'
+INFO [2018-05-15 20:05:44] [Alias.naghsh]  Description: b'\xd8\xaf\xd9\x84\xd9\x85 \xd8\xa8\xd8\xb1\xd8\xa7\xdb\x8c \xd8\xb1\xd9\x88\xd8\xb2\xd9\x87\xd8\xa7\xdb\x8c\xdb\x8c \xd8\xaa\xd9\x86\xda\xaf \xd8\xa7\xd8\xb3\xd8\xaa \xda\xa9\xd9\x87 \xd9\x85\xdb\x8c\xd8\xaf\xd8\xa7\xd9\x86\xd9\x85 \xd8\xa8\xd8\xa7\xd8\xb2 \xd9\x86\xd8\xae\xd9\x88\xd8\xa7\xd9\x87\xd9\x86\xd8\xaf \xda\xaf\xd8\xb4\xd8\xaa\xe2\x80\xa6\xc2\xa0... \xd8\xaf\xd9\x88\xd8\xb3\xd8\xa7\xd9\x84 \xda\xaf\xd8\xb0\xd8\xb4\xd8\xaa....\xe2\x80\x8c\xe2\x80\x8c ...\xe2\x80\x8c... \xd8\xa8\xd9\x87 \xd8\xb1\xd8\xa7\xd8\xb3\xd8\xaa\xdb\x8c \xda\xa9\xd9\x87 \xda\x86\xd9\x87 \xd8\xb2\xd9\x88\xd8\xaf \xd8\xaf\xdb\x8c\xd8\xb1 \xd9\x85\xdb\x8c\xd8\xb4\xd9\x88\xd8\xaf..\n\n@77777779amir \xd8\xae\xd8\xaf\xd8\xa7\xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87 \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xb9\xd9\x84\xdb\x8c \xd8\xac\xd8\xa7\xd9\x86\n@m.bolhasani5780 \xd8\xae\xd8\xaf\xd8\xa7\xd9\x88\xd9\x86\xd8\xaf \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xb1\xd8\xad\xd9\x85\xd8\xaa \xda\xa9\xd9\x86\xd9\x87 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd9\x85\xd8\xad\xd9\x85\xd8\xaf \xd8\xa7\xd9\x82\xd8\xa7\n@jwdbwlhsny6106 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xae\xd8\xa7\xd9\x84\xd8\xb2\xd8\xa7 \xd9\x81\xd8\xaf\xd8\xa7\xd8\xaa\n@yasershahmoradi \xf0\x9f\x92\x9d\xf0\x9f\x92\x9d\xf0\x9f\x92\x9d\xf0\x9f\x92\x9d\n@shabani_610 \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xa7\xd9\x82\xd8\xa7\xdb\x8c \xd8\xb4\xd8\xb9\xd8\xa8\xd8\xa7\xd9\x86\xdb\x8c\n@vali5328 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xa7\xd9\x82\xd8\xa7 \xd9\x88\xd9\x84\xdb\x8c\n@soteh.delan.22 \xd8\xae\xd8\xaf\xd8\xa7\xd8\xb1\xd8\xad\xd9\x85\xd8\xaa \xda\xa9\xd9\x86\xd9\x87 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd9\x85\xd8\xb1\xd8\xaa\xd8\xb6\xdb\x8c \xd8\xac\xd8\xa7\xd9\x86\n@davood.mahmoudi1986 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xa7\xd9\x82\xd8\xa7\xdb\x8c \xd9\x85\xd8\xad\xd9\x85\xd9\x88\xd8\xaf\xdb\x8c \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xa8\xd8\xa7\xd8\xa8\xd8\xa7 \xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@smaeilbolhasani59 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xb1\xd8\xad\xd9\x85\xd8\xaa \xda\xa9\xd9\x86\xd9\x87 \xd8\xae\xdb\x8c\xd9\x84\xdb\x8c \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xb9\xd9\x85\xd9\x87 \xd8\xb2\xd8\xa7\n@rezashahmordi \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xa7\xd9\x82\xd8\xa7 \xd8\xb1\xd8\xb6\xd8\xa7 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd8\xad\xd9\x85\xd8\xaa \xda\xa9\xd9\x86\xd9\x87 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88\n@mahmoodiali2118 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xb9\xd9\x84\xdb\x8c \xd8\xa7\xd9\x82\xd8\xa7 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@shkhry3604 \xd8\xae\xdb\x8c\xd9\x84\xdb\x8c \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xae\xd8\xaf\xd8\xa7\xd9\x88\xd9\x86\xd8\xaf \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@nima.bolhasani \xd9\x81\xd8\xaf\xd8\xa7\xd8\xaa \xd9\x86\xdb\x8c\xd9\x85\xd8\xa7 \xd8\xac\xd8\xa7\xd9\x86 \xd8\xae\xd8\xaf\xd8\xa7\xd9\x88\xd9\x86\xd8\xaf \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@smaeilbolhasani59 \xd8\xae\xdb\x8c\xd9\x84\xdb\x8c \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xb9\xd9\x85\xd8\xb2\xd8\xa7 \xd8\xae\xd8\xaf\xd8\xa7\xd9\x88\xd9\x86\xd8\xaf \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@hassani.1356 \xd8\xaa\xd8\xb4\xda\xa9\xd8\xb1 \xd8\xae\xd8\xa7\xd9\x84\xd8\xb2\xd8\xa7 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87\n@reza_shahmoradi2025 \xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xaf\xd8\xa7\xdb\x8c \xd8\xb1\xd8\xb6\xd8\xa7 \xd8\xae\xd8\xaf\xd8\xa7 \xd8\xb1\xd9\x81\xd8\xaa\xda\xaf\xd8\xa7\xd9\x86\xd8\xaa\xd9\x88 \xd8\xa8\xdb\x8c\xd8\xa7\xd9\x85\xd8\xb1\xd8\xb2\xd9\x87'
+INFO [2018-05-15 20:05:46] [Alias.naghsh]  --> Image Liked!
+INFO [2018-05-15 20:05:46] [aliasring]  Interaction begin...
+INFO [2018-05-15 20:05:47] [Alias.naghsh]  --> User followed: ['hamid__mirzakhani']
+INFO [2018-05-15 20:05:47] [Alias.naghsh]  Username [1/1]
+INFO [2018-05-15 20:05:47] [Alias.naghsh]  --> b'hamid__mirzakhani'
+INFO [2018-05-15 20:05:47] [Alias.naghsh]  Getting hamid__mirzakhani image list...
+INFO [2018-05-15 20:06:13] [Alias.naghsh]  Interaction begin...
+INFO [2018-05-15 20:06:19] [aliasring]  --> Not following
+INFO [2018-05-15 20:06:20] [aliasring]  Post [1/2]
+INFO [2018-05-15 20:06:20] [aliasring]  https://www.instagram.com/p/BWDfQfaDxpL/?taken-by=aroosjoona
+INFO [2018-05-15 20:06:23] [aliasring]  Image from: b'aroosjoona'
+INFO [2018-05-15 20:06:45] [Alias.naghsh]  --> Not following
+INFO [2018-05-15 20:06:46] [Alias.naghsh]  Post [1/2]
+INFO [2018-05-15 20:06:46] [Alias.naghsh]  https://www.instagram.com/p/BfsWVE8nYs4/?taken-by=hamid__mirzakhani
+INFO [2018-05-15 20:06:49] [Alias.naghsh]  Image from: b'hamid__mirzakhani'
+INFO [2018-05-15 20:06:55] [aliasring]  User: aroosjoona >> followers: 773  |  following: unknown  |  relationship ratio: unknown
+INFO [2018-05-15 20:06:55] [aliasring]  Link: b'https://www.instagram.com/p/BWDfQfaDxpL/?taken-by=aroosjoona'
+INFO [2018-05-15 20:06:55] [aliasring]  Description: b'#\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x84\xd8\xa8\xd8\xa7\xd8\xb3_\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe'
+INFO [2018-05-15 20:06:57] [aliasring]  --> Image Liked!
+INFO [2018-05-15 20:06:57] [Alias.naghsh]  User: hamid__mirzakhani >> followers: 1406  |  following: 2031  |  relationship ratio: 1.44
+INFO [2018-05-15 20:06:57] [Alias.naghsh]  Link: b'https://www.instagram.com/p/BfsWVE8nYs4/?taken-by=hamid__mirzakhani'
+INFO [2018-05-15 20:06:57] [Alias.naghsh]  Description: b'\xda\xa9\xd8\xaa\xd8\xa7\xd8\xa8 \xd9\x88 \xd8\xa2\xd8\xa8\xd8\x8c \xd9\x87\xd8\xb1 \xd8\xaf\xd9\x88 \xd8\xaf\xd8\xb1 \xd8\xa8\xd8\xad\xd8\xb1\xd8\xa7\xd9\x86 \xd9\x87\xd8\xb3\xd8\xaa\xd9\x86\xd8\xaf!\n\n\xdb\x8c\xda\xa9\xdb\x8c \xd8\xa7\xd8\xb2 \xda\xa9\xd9\x85 \xd9\x85\xd8\xb5\xd8\xb1\xd9\x81\xdb\x8c\xd8\x9b\n\xd8\xaf\xdb\x8c\xda\xaf\xd8\xb1\xdb\x8c \xd8\xa7\xd8\xb2 \xd9\xbe\xd8\xb1 \xd9\x85\xd8\xb5\xd8\xb1\xd9\x81\xdb\x8c...!\n\n@lcr_store \xf0\x9f\x8c\xb9\xf0\x9f\x8c\xb9\xf0\x9f\x8c\xb9\xf0\x9f\x8c\xb9'
+INFO [2018-05-15 20:06:59] [aliasring]  --> Not commented
+INFO [2018-05-15 20:06:59] [Alias.naghsh]  --> Image Liked!
+INFO [2018-05-15 20:07:00] [aliasring]  Post [2/2]
+INFO [2018-05-15 20:07:00] [aliasring]  https://www.instagram.com/p/BWEXtlBDTo3/?taken-by=aroosjoona
+INFO [2018-05-15 20:07:01] [Alias.naghsh]  --> Not commented
+INFO [2018-05-15 20:07:02] [Alias.naghsh]  Post [2/2]
+INFO [2018-05-15 20:07:02] [Alias.naghsh]  https://www.instagram.com/p/BdBBC3uH2VM/?taken-by=hamid__mirzakhani
+INFO [2018-05-15 20:07:03] [aliasring]  Image from: b'aroosjoona'
+INFO [2018-05-15 20:07:03] [aliasring]  Link: b'https://www.instagram.com/p/BWEXtlBDTo3/?taken-by=aroosjoona'
+INFO [2018-05-15 20:07:03] [aliasring]  Description: b'#\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x84\xd8\xa8\xd8\xa7\xd8\xb3_\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe_\xd8\xb9\xd8\xb1\xd9\x88\xd8\xb3 #\xd9\x85\xdb\x8c\xda\xa9\xd8\xa7\xd9\xbe #\xd9\x84\xd8\xa8\xd8\xa7\xd8\xb3_\xd8\xb4\xdb\x8c\xda\xa9'
+INFO [2018-05-15 20:07:05] [aliasring]  --> Image Liked!
+INFO [2018-05-15 20:07:05] [Alias.naghsh]  Image from: b'hamid__mirzakhani'
+INFO [2018-05-15 20:07:05] [Alias.naghsh]  Link: b'https://www.instagram.com/p/BdBBC3uH2VM/?taken-by=hamid__mirzakhani'
+INFO [2018-05-15 20:07:05] [Alias.naghsh]  Description: b'\xd8\xae\xd9\x88\xd8\xb4 \xd8\xa8\xd9\x87 \xd8\xad\xd8\xa7\xd9\x84 \xd8\xa7\xd9\x88\xd9\x86\xd8\xa7 \xda\xa9\xd9\x87 \xd8\xb4\xd8\xa8 \xdb\x8c\xd9\x84\xd8\xaf\xd8\xa7 \xd9\xbe\xd8\xaf\xd8\xb1\xd8\xb4\xd9\x88\xd9\x86 \xd9\xbe\xdb\x8c\xd8\xb4\xd8\xb4\xd9\x88\xd9\x86 \xd8\xa8\xd9\x88\xd8\xaf ................\n\n\xd9\x85\xd9\x85\xd9\x86\xd9\x88\xd9\x86\xd9\x85 \xd8\xa7\xd8\xb2 \xd9\x87\xd9\x85\xd8\xaa\xd9\x88\xd9\x86 \xd8\xb3\xd8\xa7\xd9\x84\xd8\xa7\xd8\xb1\xdb\x8c\xd8\xaf'
+INFO [2018-05-15 20:07:07] [aliasring]  --> Not commented
+INFO [2018-05-15 20:07:07] [Alias.naghsh]  --> Image Liked!
+INFO [2018-05-15 20:07:08] [aliasring]  -------------
+INFO [2018-05-15 20:07:08] [aliasring]  --> Total liked image reached it's amount given: 2
+INFO [2018-05-15 20:07:08] [aliasring]  Liked: 2
+INFO [2018-05-15 20:07:08] [aliasring]  Already Liked: 0
+INFO [2018-05-15 20:07:08] [aliasring]  Inappropriate: 0
+INFO [2018-05-15 20:07:08] [aliasring]  Commented: 0
+INFO [2018-05-15 20:07:08] [aliasring]  --> Not commented
+INFO [2018-05-15 20:07:09] [aliasring]  --> Not following
+INFO [2018-05-15 20:07:09] [Alias.naghsh]  --> Not commented
+WARNING [2018-05-15 20:07:10] [aliasring]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:10] [aliasring]  New link found...
+INFO [2018-05-15 20:07:10] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:10] [aliasring]  https://www.instagram.com/p/BixKHMYnEGu/
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  -------------
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  --> Total liked image reached it's amount given: 2
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  Liked: 2
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  Already Liked: 0
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  Inappropriate: 0
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  Commented: 0
+INFO [2018-05-15 20:07:10] [Alias.naghsh]  --> Not commented
+INFO [2018-05-15 20:07:11] [Alias.naghsh]  --> Not following
+WARNING [2018-05-15 20:07:11] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:13] [aliasring]  Image from: b'jangoolakbaz'
+INFO [2018-05-15 20:07:18] [aliasring]  User: jangoolakbaz >> followers: 209000  |  following: 2  |  relationship ratio: 0.0
+INFO [2018-05-15 20:07:18] [aliasring]  --> Image not liked: b"User jangoolakbaz's followers count exceeds maximum limit"
+INFO [2018-05-15 20:07:18] [aliasring]  New link found...
+INFO [2018-05-15 20:07:18] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:18] [aliasring]  https://www.instagram.com/p/BizEF_-npOY/
+INFO [2018-05-15 20:07:21] [aliasring]  Image from: b'jangoolakbaz'
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:07:21] [Alias.naghsh]  https://www.instagram.com/p/BizUWYTDwie/
+INFO [2018-05-15 20:07:22] [_Gray__world_]  Gathered total of 0 unique active followers from the latest 7 posts in 6 minutes and 11 seconds
+INFO [2018-05-15 20:07:25] [aliasring]  User: jangoolakbaz >> followers: 209000  |  following: 2  |  relationship ratio: 0.0
+INFO [2018-05-15 20:07:25] [aliasring]  --> Image not liked: b"User jangoolakbaz's followers count exceeds maximum limit"
+INFO [2018-05-15 20:07:25] [Alias.naghsh]  Image from: b'ksa432778'
+INFO [2018-05-15 20:07:30] [Alias.naghsh]  User: ksa432778 >> followers: 2429  |  following: 1086  |  relationship ratio: 0.45
+INFO [2018-05-15 20:07:30] [Alias.naghsh]  --> Image not liked: b'ksa432778 is not a massive follower with the relationship ratio of 0.45'
+WARNING [2018-05-15 20:07:30] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:30] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:07:30] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:07:30] [Alias.naghsh]  https://www.instagram.com/p/BizsHoFhfUk/
+INFO [2018-05-15 20:07:32] [Alias.naghsh]  Image from: b'hojat.moharefi.zade'
+INFO [2018-05-15 20:07:33] [aliasring]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:07:33] [aliasring]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:07:33] [aliasring]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+WARNING [2018-05-15 20:07:33] [aliasring]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:07:33] [aliasring]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:33] [aliasring]  New link found...
+INFO [2018-05-15 20:07:33] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:33] [aliasring]  https://www.instagram.com/p/BixFhxFFdzJ/
+INFO [2018-05-15 20:07:36] [aliasring]  Image from: b'halghe.irr'
+INFO [2018-05-15 20:07:38] [Alias.naghsh]  User: hojat.moharefi.zade >> followers: 1305  |  following: 1082  |  relationship ratio: 0.83
+INFO [2018-05-15 20:07:38] [Alias.naghsh]  --> Image not liked: b'hojat.moharefi.zade is not a massive follower with the relationship ratio of 0.83'
+WARNING [2018-05-15 20:07:38] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:38] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:07:38] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:07:38] [Alias.naghsh]  https://www.instagram.com/p/BizPsKvDxDH/
+INFO [2018-05-15 20:07:40] [aliasring]  User: halghe.irr >> followers: 2544  |  following: 57  |  relationship ratio: 0.02
+INFO [2018-05-15 20:07:40] [aliasring]  --> Image not liked: b"User halghe.irr's following count is less than minimum limit"
+INFO [2018-05-15 20:07:40] [aliasring]  New link found...
+INFO [2018-05-15 20:07:40] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:40] [aliasring]  https://www.instagram.com/p/BiwKLrMFwTa/
+INFO [2018-05-15 20:07:41] [Alias.naghsh]  Image from: b'ksa432778'
+INFO [2018-05-15 20:07:43] [aliasring]  Image from: b'noghresarayehazrat'
+INFO [2018-05-15 20:07:44] [Alias.naghsh]  User: ksa432778 >> followers: 2429  |  following: 1086  |  relationship ratio: 0.45
+INFO [2018-05-15 20:07:44] [Alias.naghsh]  --> Image not liked: b'ksa432778 is not a massive follower with the relationship ratio of 0.45'
+INFO [2018-05-15 20:07:44] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:07:44] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:07:44] [Alias.naghsh]  https://www.instagram.com/p/Biypi33jao3/
+INFO [2018-05-15 20:07:47] [Alias.naghsh]  Image from: b'venoos_elahe___55'
+INFO [2018-05-15 20:07:49] [aliasring]  User: noghresarayehazrat >> followers: 3762  |  following: 709  |  relationship ratio: 0.19
+INFO [2018-05-15 20:07:49] [aliasring]  --> Image not liked: b'noghresarayehazrat is not a massive follower with the relationship ratio of 0.19'
+INFO [2018-05-15 20:07:49] [aliasring]  New link found...
+INFO [2018-05-15 20:07:49] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:49] [aliasring]  https://www.instagram.com/p/BiyhugzHoBt/
+INFO [2018-05-15 20:07:51] [Alias.naghsh]  User: venoos_elahe___55 >> followers: 576  |  following: 596  |  relationship ratio: 1.03
+INFO [2018-05-15 20:07:51] [Alias.naghsh]  --> Image not liked: b'venoos_elahe___55 is not a massive follower with the relationship ratio of 1.03'
+INFO [2018-05-15 20:07:51] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:07:51] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:07:51] [Alias.naghsh]  https://www.instagram.com/p/BizNu3MD7zX/
+INFO [2018-05-15 20:07:51] [aliasring]  Image from: b'news_funny1'
+WARNING [2018-05-15 20:07:54] [_Gray__world_]  There are 0 people to unfollow
+INFO [2018-05-15 20:07:54] [Alias.naghsh]  Image from: b'ksa432778'
+INFO [2018-05-15 20:07:56] [aliasring]  User: news_funny1 >> followers: 82300  |  following: 262  |  relationship ratio: 0.0
+INFO [2018-05-15 20:07:56] [aliasring]  --> Image not liked: b"User news_funny1's followers count exceeds maximum limit"
+WARNING [2018-05-15 20:07:56] [aliasring]  Post Randomly Skipped...
+
+WARNING [2018-05-15 20:07:56] [aliasring]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:56] [aliasring]  New link found...
+INFO [2018-05-15 20:07:56] [aliasring]  [1 posts liked /6 amount]
+INFO [2018-05-15 20:07:56] [aliasring]  https://www.instagram.com/p/BiwZt_BlZzM/
+INFO [2018-05-15 20:07:58] [Alias.naghsh]  User: ksa432778 >> followers: 2429  |  following: 1086  |  relationship ratio: 0.45
+INFO [2018-05-15 20:07:58] [Alias.naghsh]  --> Image not liked: b'ksa432778 is not a massive follower with the relationship ratio of 0.45'
+WARNING [2018-05-15 20:07:58] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:07:59] [aliasring]  Image from: b'daftarezdevajzarrin'
+INFO [2018-05-15 20:08:05] [aliasring]  User: daftarezdevajzarrin >> followers: 1866  |  following: 2519  |  relationship ratio: 1.35
+INFO [2018-05-15 20:08:05] [aliasring]  Link: b'https://www.instagram.com/p/BiwZt_BlZzM/'
+INFO [2018-05-15 20:08:05] [aliasring]  Description: b'\xd8\xa8\xd9\x87\xd8\xb1\xd9\x88\xd8\xb2 \xd8\xb4\xd8\xb9\xdb\x8c\xd8\xa8\xdb\x8c \xd8\xb9\xd8\xb2\xdb\x8c\xd8\xb2 \xd9\x85\xd9\x87\xd9\x85\xd8\xa7\xd9\x86 \xd9\x88\xdb\x8c\xda\x98\xd9\x87 \xd8\xaf\xd9\x81\xd8\xaa\xd8\xb1 \xd8\xa7\xd8\xb2\xd8\xaf\xd9\x88\xd8\xa7\xd8\xac \xd8\xb2\xd8\xb1\xd9\x91\xdb\x8c\xd9\x86\n#\xd8\xa8\xd9\x87\xd8\xb1\xd9\x88\xd8\xb2_\xd8\xb4\xd8\xb9\xdb\x8c\xd8\xa8\xdb\x8c \n#\xd8\xa7\xd8\xb2\xd8\xaf\xd9\x88\xd8\xa7\xd8\xac\n#\xd8\xb7\xd9\x84\xd8\xa7\xd9\x88\xd9\x85\xd8\xb3\xf0\x9f\x8e\xac\xf0\x9f\x8e\xa5 #\xd8\xb3\xdb\x8c\xd9\x86\xd9\x85\xd8\xa7 \n#\xd8\xb3\xdb\x8c\xd9\x86\xd9\x85\xd8\xa7\xdb\x8c_\xd8\xa7\xdb\x8c\xd8\xb1\xd8\xa7\xd9\x86 \n#\xd8\xb9\xd9\x82\xd8\xaf\n#\xd9\x84\xd8\xa7\xda\xa9\xda\x86\xd8\xb1\xd9\x8a \n#\xd8\xb3\xd9\x81\xd8\xb1\xd9\x87_\xd8\xb9\xd9\x82\xd8\xaf \n#\xd8\xaa\xd9\x87\xd8\xb1\xd8\xa7\xd9\x86\xd9\xbe\xd8\xa7\xd8\xb1\xd8\xb3\n#\xd8\xaa\xd9\x87\xd8\xb1\xd8\xa7\xd9\x86\n\n@nbanafshe \xd9\x81\xd9\x84\xda\xa9\xd9\x87 \xd8\xa7\xd9\x88\xd9\x84 \xd8\xaa\xd9\x87\xd8\xb1\xd8\xa7\xd9\x86\xd9\xbe\xd8\xa7\xd8\xb1\xd8\xb3'
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  Total of links feched for analysis: 8
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:08:07] [Alias.naghsh]  https://www.instagram.com/p/BivqtkaF7Su/
+INFO [2018-05-15 20:08:07] [aliasring]  --> Image Liked!
+INFO [2018-05-15 20:08:10] [Alias.naghsh]  Image from: b'dalida.jewelry.fanpage'
+INFO [2018-05-15 20:08:10] [aliasring]  --> User followed: ['daftarezdevajzarrin']
+INFO [2018-05-15 20:08:10] [aliasring]  Username [1/1]
+INFO [2018-05-15 20:08:10] [aliasring]  --> b'daftarezdevajzarrin'
+INFO [2018-05-15 20:08:10] [aliasring]  Getting daftarezdevajzarrin image list...
+INFO [2018-05-15 20:08:13] [Alias.naghsh]  User: dalida.jewelry.fanpage >> followers: 679  |  following: 471  |  relationship ratio: 0.69
+INFO [2018-05-15 20:08:13] [Alias.naghsh]  --> Image not liked: b'dalida.jewelry.fanpage is not a massive follower with the relationship ratio of 0.69'
+WARNING [2018-05-15 20:08:13] [Alias.naghsh]  Post Randomly Skipped...
+
+INFO [2018-05-15 20:08:13] [Alias.naghsh]  New link found...
+INFO [2018-05-15 20:08:13] [Alias.naghsh]  [1 posts liked /7 amount]
+INFO [2018-05-15 20:08:13] [Alias.naghsh]  https://www.instagram.com/p/BivihdvFKiB/
+INFO [2018-05-15 20:08:16] [Alias.naghsh]  Image from: b'gallery_parsa2017'
+ERROR [2018-05-15 20:08:19] [_Gray__world_]  following_link error list index out of range
+INFO [2018-05-15 20:08:21] [Alias.naghsh]  User: gallery_parsa2017 >> followers: 1133  |  following: 5257  |  relationship ratio: 4.64
+INFO [2018-05-15 20:08:21] [Alias.naghsh]  Link: b'https://www.instagram.com/p/BivihdvFKiB/'
+INFO [2018-05-15 20:08:21] [Alias.naghsh]  Description: b'\xda\xaf\xd8\xb1\xd8\xaf\xd9\x86\xdb\x8c \xd8\xa7\xd8\xb3\xd9\x85 \n#\xd8\xa7\xd8\xb3\xd9\x85\xd9\x85\xd9\x87\xd8\xaf\xdb\x8c\n#\xd9\x85\xd9\x87\xd8\xaf\xdb\x8c'
+INFO [2018-05-15 20:08:23] [Alias.naghsh]  --> Image Liked!
+INFO [2018-05-15 20:08:25] [Alias.naghsh]  --> User followed: ['gallery_parsa2017']
+INFO [2018-05-15 20:08:25] [Alias.naghsh]  Username [1/1]
+INFO [2018-05-15 20:08:25] [Alias.naghsh]  --> b'gallery_parsa2017'
+INFO [2018-05-15 20:08:25] [Alias.naghsh]  Getting gallery_parsa2017 image list...
+INFO [2018-05-15 20:08:36] [aliasring]  Interaction begin...
+WARNING [2018-05-15 20:08:41] [aliasring]  Load button not found, working with current images!
+INFO [2018-05-15 20:08:41] [Alias.naghsh]  Interaction begin...
+WARNING [2018-05-15 20:08:41] [Alias.naghsh]  Load button not found, working with current images!
+INFO [2018-05-16 04:08:48] [alias.gallery]  Session started - 2018-05-16 04:08:48
+INFO [2018-05-16 04:09:02] [alias.gallery]  Logged in successfully!
+INFO [2018-05-16 04:09:07] [alias.gallery]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-16 04:09:38] [alias.gallery]  Post 1  |  Likers: found 206, catched 206
+INFO [2018-05-16 04:09:54] [_Gray__world_]  Session started - 2018-05-16 04:09:54
+INFO [2018-05-16 04:10:13] [_Gray__world_]  Logged in successfully!
+INFO [2018-05-16 04:10:14] [alias.gallery]  Post 2  |  Likers: found 215, catched 215
+INFO [2018-05-16 04:10:20] [_Gray__world_]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-16 04:10:43] [_Gray__world_]  Post 1  |  Likers: found 143, catched 143
+INFO [2018-05-16 04:10:47] [alias.gallery]  Post 3  |  Likers: found 169, catched 169
+INFO [2018-05-16 04:11:00] [aliasring]  Session started - 2018-05-16 04:11:00
+INFO [2018-05-16 04:11:18] [alias.gallery]  Post 4  |  Likers: found 174, catched 173
+INFO [2018-05-16 04:11:18] [_Gray__world_]  Post 2  |  Likers: found 227, catched 227
+INFO [2018-05-16 04:11:55] [_Gray__world_]  Post 3  |  Likers: found 193, catched 193
+INFO [2018-05-16 04:11:56] [alias.gallery]  Post 5  |  Likers: found 219, catched 219
+INFO [2018-05-16 04:12:06] [Alias.naghsh]  Session started - 2018-05-16 04:12:06
+INFO [2018-05-16 04:12:11] [alias.gallery]  Too Many Requests sent! ~will sleep some :>
+INFO [2018-05-16 04:12:29] [_Gray__world_]  Post 4  |  Likers: found 195, catched 195
+INFO [2018-05-16 04:13:02] [_Gray__world_]  Post 5  |  Likers: found 184, catched 184
+INFO [2018-05-16 04:13:20] [_Gray__world_]  Too Many Requests sent! ~will sleep some :>
+INFO [2018-05-16 04:20:52] [Alias.naghsh]  Logged in successfully!
+INFO [2018-05-16 04:22:01] [aliasring]  Logged in successfully!
+INFO [2018-05-16 04:22:15] [alias.gallery]  Post 6  |  Likers: found 147, catched 59
+INFO [2018-05-16 04:23:24] [_Gray__world_]  Post 6  |  Likers: found 209, catched 108
+INFO [2018-05-16 04:24:53] [alias.gallery]  Gathered total of 446 unique active followers from the latest 7 posts in 15 minutes and 45 seconds
+INFO [2018-05-16 04:25:54] [_Gray__world_]  Gathered total of 437 unique active followers from the latest 7 posts in 15 minutes and 34 seconds
+INFO [2018-05-16 04:26:55] [alias.gallery]  Session started - 2018-05-16 04:26:55
+INFO [2018-05-16 04:28:18] [alias.gallery]  Session started - 2018-05-16 04:28:18
+INFO [2018-05-16 04:29:04] [alias.gallery]  Logged in successfully!
+INFO [2018-05-16 04:29:14] [alias.gallery]  Getting active users who liked the latest 7 posts:
+  ~collecting the usernames from posts with the boundary of 500
+
+INFO [2018-05-16 04:29:24] [_Gray__world_]  Session started - 2018-05-16 04:29:24
+INFO [2018-05-16 04:29:44] [alias.gallery]  Post 1  |  Likers: found 206, catched 206
+INFO [2018-05-16 04:30:21] [alias.gallery]  Post 2  |  Likers: found 215, catched 215
+INFO [2018-05-16 04:30:30] [aliasring]  Session started - 2018-05-16 04:30:30
+INFO [2018-05-16 04:30:47] [alias.gallery]  Post 3  |  Likers: found 169, catched 120

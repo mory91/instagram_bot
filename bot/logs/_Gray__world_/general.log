@@ -1,0 +1,79 @@
+INFO [2018-05-15 10:50:52] [amir___ali98]  Session started - 2018-05-15 10:50:52
+INFO [2018-05-15 10:50:52] [_Gray__world_]  Session started - 2018-05-15 10:50:52
+WARNING [2018-05-15 10:50:56] [_Gray__world_]  Could not locate Chrome: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-15 10:50:56] [_Gray__world_]  Session ended - 2018-05-15 10:50:56
+INFO [2018-05-15 10:50:56] [_Gray__world_]  --------------------
+
+
+WARNING [2018-05-15 10:50:56] [amir___ali98]  Could not locate Chrome: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=66.0.3359.139)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Linux 4.13.0-39-generic x86_64)
+
+INFO [2018-05-15 10:50:56] [amir___ali98]  Session ended - 2018-05-15 10:50:56
+INFO [2018-05-15 10:50:56] [amir___ali98]  --------------------
+
+
+INFO [2018-05-15 10:51:24] [_Gray__world_]  Session started - 2018-05-15 10:51:24
+INFO [2018-05-15 10:51:25] [_Gray__world_]  Session started - 2018-05-15 10:51:25
+CRITICAL [2018-05-15 10:52:15] [_Gray__world_]  Wrong login data!
+INFO [2018-05-15 10:52:16] [_Gray__world_]  Logged in successfully!
+INFO [2018-05-15 10:52:19] [_Gray__world_]  Tag [1/1]
+INFO [2018-05-15 10:52:19] [_Gray__world_]  --> b'natgeo'
+INFO [2018-05-15 10:52:26] [_Gray__world_]  Session ended - 2018-05-15 10:52:26
+INFO [2018-05-15 10:52:26] [_Gray__world_]  --------------------
+
+
+INFO [2018-05-15 10:52:32] [_Gray__world_]  desired amount: 1  |  top posts [disabled]: 9  |  possible posts: 11487357
+INFO [2018-05-15 10:52:38] [_Gray__world_]  [1/1]
+INFO [2018-05-15 10:52:38] [_Gray__world_]  https://www.instagram.com/p/BiybDA8H_pz/?tagged=natgeo
+INFO [2018-05-15 10:52:51] [_Gray__world_]  Image from: b'kira.kas'
+INFO [2018-05-15 10:53:05] [_Gray__world_]  User: kira.kas >> followers: 3701  |  following: 4015  |  relationship ratio: 1.08
+INFO [2018-05-15 10:53:05] [_Gray__world_]  --> Image not liked: b'kira.kas is not a massive follower with the relationship ratio of 1.08'
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Liked: 0
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Already Liked: 0
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Inappropriate: 1
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Commented: 0
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Followed: 0
+INFO [2018-05-15 10:53:05] [_Gray__world_]  Session ended - 2018-05-15 10:53:05
+INFO [2018-05-15 10:53:05] [_Gray__world_]  --------------------
+
+
+INFO [2018-05-15 11:04:42] [_Gray__world_]  Session started - 2018-05-15 11:04:42
+INFO [2018-05-15 11:04:42] [keyhan.a]  Session started - 2018-05-15 11:04:42
+INFO [2018-05-15 11:04:42] [amir___ali98]  Session started - 2018-05-15 11:04:42
+INFO [2018-05-15 11:05:24] [_Gray__world_]  Session started - 2018-05-15 11:05:24
+INFO [2018-05-15 11:05:24] [_Gray__world_]  Session started - 2018-05-15 11:05:24
+INFO [2018-05-15 11:05:24] [_Gray__world_]  Session started - 2018-05-15 11:05:24
+CRITICAL [2018-05-15 11:06:12] [_Gray__world_]  Wrong login data!
+CRITICAL [2018-05-15 11:06:15] [_Gray__world_]  Wrong login data!
+INFO [2018-05-15 11:06:16] [_Gray__world_]  Logged in successfully!
+INFO [2018-05-15 11:06:18] [_Gray__world_]  Tag [1/1]
+INFO [2018-05-15 11:06:18] [_Gray__world_]  --> b'natgeo'
+INFO [2018-05-15 11:06:18] [_Gray__world_]  Session ended - 2018-05-15 11:06:18
+INFO [2018-05-15 11:06:18] [_Gray__world_]  --------------------
+
+
+INFO [2018-05-15 11:06:20] [_Gray__world_]  Session ended - 2018-05-15 11:06:20
+INFO [2018-05-15 11:06:20] [_Gray__world_]  --------------------
+
+
+INFO [2018-05-15 11:06:38] [_Gray__world_]  desired amount: 1  |  top posts [disabled]: 9  |  possible posts: 11487506
+INFO [2018-05-15 11:06:44] [_Gray__world_]  [1/1]
+INFO [2018-05-15 11:06:44] [_Gray__world_]  https://www.instagram.com/p/BiycqSXAGm3/?tagged=natgeo
+INFO [2018-05-15 11:06:59] [_Gray__world_]  Image from: b'kentung_jm23'
+INFO [2018-05-15 11:07:05] [_Gray__world_]  User: kentung_jm23 >> followers: 187  |  following: 68  |  relationship ratio: 0.36
+INFO [2018-05-15 11:07:05] [_Gray__world_]  --> Image not liked: b"User kentung_jm23's following count is less than minimum limit"
+INFO [2018-05-15 11:07:05] [_Gray__world_]  Liked: 0
+INFO [2018-05-15 11:07:05] [_Gray__world_]  Already Liked: 0
+INFO [2018-05-15 11:07:05] [_Gray__world_]  Inappropriate: 1
+INFO [2018-05-15 11:07:05] [_Gray__world_]  Commented: 0
+INFO [2018-05-15 11:07:05] [_Gray__world_]  Followed: 0
+INFO [2018-05-15 11:07:06] [_Gray__world_]  Session ended - 2018-05-15 11:07:06
+INFO [2018-05-15 11:07:06] [_Gray__world_]  --------------------
+
+
