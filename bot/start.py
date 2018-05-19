@@ -19,18 +19,27 @@ bots_t = []
 
 def get_tags(bot):
     tags = []
-    tag_objs = Target.objects.filter(target_type='T', bot=bot.id)
-    return tag_objs 
+    tag_objs = list(Target.objects.filter(target_type='T', bot=bot.id))
+    tags_to_ret = []
+    for t in tag_objs:
+        tags_to_ret.append(t.target)
+    return tags_to_ret 
 
 def get_pages_follow_followers(bot):
     pages = []
-    pages_objs = Target.objects.filter(target_type='P', bot=bot.id, target_follows='F')
-    return pages_objs
+    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='F'))
+    pages_to_ret = []
+    for p in pages_objs:
+        pages_to_ret.append(p.target)
+    return pages_to_ret
 
 def get_pages_follow_likers(bot):
     pages = []
-    pages_objs = Target.objects.filter(target_type='P', bot=bot.id, target_follows='L')
-    return pages_objs
+    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='L'))
+    pages_to_ret = []
+    for p in pages_objs:
+        pages_to_ret.append(p.target)
+    return pages_to_ret
 
 
 # instaUser = ['username1', 'username2']
@@ -62,17 +71,17 @@ def worker(bot):
         smartTags = tags
         
         # session.set_dont_unfollow_active_users(enabled=True, posts=7)
-        session.set_user_interact(amount=2, randomize=True, percentage=20, media='Photo')
-        session.set_relationship_bounds(enabled=True,
-                potency_ratio=-1.21,
-                delimit_by_numbers=True,
-                max_followers=4590,
-                    max_following=5555,
-                    min_followers=45,
-                    min_following=77)
+        # session.set_user_interact(amount=2, randomize=True, percentage=20, media='Photo')
+        # session.set_relationship_bounds(enabled=True,
+        #         potency_ratio=-1.21,
+        #         delimit_by_numbers=True,
+        #         max_followers=4590,
+        #             max_following=5555,
+        #             min_followers=45,
+        #             min_following=77)
 
-        session.like_by_feed(amount=random.randint(5,11), randomize=True, unfollow=True, interact=True)
-        print("MULTI -",instaUser,"finished liking by feed at",datetime.datetime.now().strftime("%H:%M:%S"))
+        # session.like_by_feed(amount=random.randint(5,11), randomize=True, unfollow=True, interact=True)
+        # print("MULTI -",instaUser,"finished liking by feed at",datetime.datetime.now().strftime("%H:%M:%S"))
 
 
         # Location
@@ -84,13 +93,13 @@ def worker(bot):
         # print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
         
         # Followers of followers
-        if followersToFollow:
-            session.set_user_interact(amount=2,
-				 percentage=70,
-                  randomize=True,
-                   media='Photo')
-            session.follow_user_followers(followersToFollow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
-            print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
+        # if followersToFollow:
+        #     session.set_user_interact(amount=2,
+		# 		 percentage=70,
+        #           randomize=True,
+        #            media='Photo')
+        #     session.follow_user_followers(followersToFollow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
+        #     print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
 
         if likersToFollow:
             session.set_user_interact(amount=2,
