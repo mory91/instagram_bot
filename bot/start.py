@@ -3,7 +3,7 @@ from instapy import InstaPy
 import multiprocessing
 import datetime
 import time
-
+import random
 import sys
 sys.path.append('../')
 
@@ -41,19 +41,16 @@ def get_pages_follow_likers(bot):
         pages_to_ret.append(p.target)
     return pages_to_ret
 
-
-# instaUser = ['username1', 'username2']
-# instaPass = ['pass1', 'pass2']
-# followersToFollow = [['acc1RelatedtoUser1', 'acc2RelatedtoUser1'], ['acc1RelatedtoUser2']]
-# smartTags = [['tag1User1', 'tag2User1'], ['tag1User2']]
-# followLocation = ['', '224442573/salton-sea/']
-
 def worker(bot):
     
     last_id = 0
     tags = get_tags(bot)
     followersToFollow = get_pages_follow_followers(bot)
     likersToFollow = get_pages_follow_likers(bot)
+
+    
+    
+
     if (len(bot.username) <= 0):
         bot.started = False
         return
@@ -89,24 +86,30 @@ def worker(bot):
         #     session.like_by_locations(followLocation[selection], amount=10)
         #     print("MULTI -",instaUser[selection],"finished liking by location",datetime.datetime.now().strftime("%H:%M:%S"))
 
-        # session.unfollow_users(amount=random.randint(7,10), sleep_delay=(random.randint(44,111)))
-        # print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
+
+        session.set_do_comment(enabled=True, percentage=25)
+        session.set_comments(bot.comments.split('*'))
+
+        session.unfollow_users(amount=random.randint(1, 5), sleep_delay=(random.randint(44,111)))
+        print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
         
         # Followers of followers
-        # if followersToFollow:
-        #     session.set_user_interact(amount=2,
-		# 		 percentage=70,
-        #           randomize=True,
-        #            media='Photo')
-        #     session.follow_user_followers(followersToFollow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
-        #     print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
-
-        if likersToFollow:
+        if followersToFollow:
+            random_followers_to_follow = random.sample(followersToFollow, min(5, len(followersToFollow)))
             session.set_user_interact(amount=2,
 				 percentage=70,
                   randomize=True,
                    media='Photo')
-            session.follow_likers (likersToFollow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
+            session.follow_user_followers(random_followers_to_follow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
+            print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
+
+        if likersToFollow:
+            random_likers_to_follow = random.sample(likersToFollow, min(5, len(likersToFollow)))
+            session.set_user_interact(amount=2,
+				 percentage=70,
+                  randomize=True,
+                   media='Photo')
+            session.follow_likers (random_likers_to_follow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
             print("MULTI -",instaUser,"finished following likers at",datetime.datetime.now().strftime("%H:%M:%S")) 
 
         if smartTags:
@@ -115,12 +118,12 @@ def worker(bot):
             print("MULTI -",instaUser,"finished smartTags at",datetime.datetime.now().strftime("%H:%M:%S"))
         
         if last is not None and last.id > last_id:
-                last_id = last.id
-                tags = get_tags(bot)
-                followersToFollow = get_pages_follow_followers(bot)
-                likersToFollow = get_pages_follow_likers(bot)
-                smartTags = tags
-                # insta_bot.user_list = pages
+            last_id = last.id
+            tags = get_tags(bot)
+            followersToFollow = get_pages_follow_followers(bot)
+            likersToFollow = get_pages_follow_likers(bot)
+            smartTags = tags
+            # insta_bot.user_list = pages
 
     session.end()
     print("MULTI -",instaUser,"finished run at",datetime.datetime.now().strftime("%H:%M:%S"))
