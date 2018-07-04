@@ -124,6 +124,7 @@ def worker(bot):
             likersToFollow = get_pages_follow_likers(bot)
             smartTags = tags
             # insta_bot.user_list = pages
+        time.sleep(66)
 
     session.end()
     print("MULTI -",instaUser,"finished run at",datetime.datetime.now().strftime("%H:%M:%S"))
