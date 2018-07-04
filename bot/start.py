@@ -90,8 +90,8 @@ def worker(bot):
         session.set_do_comment(enabled=True, percentage=25)
         session.set_comments(bot.comments.split('*'))
 
-        session.unfollow_users(amount=random.randint(1, 5), sleep_delay=(random.randint(44,111)))
-        print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
+        # session.unfollow_users(amount=random.randint(1, 5), sleep_delay=(random.randint(44,111)))
+        # print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
         
         # Followers of followers
         if followersToFollow:
