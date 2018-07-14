@@ -1,6 +1,6 @@
 import random 
 from instapy import InstaPy
-import multiprocessing
+import threading
 import datetime
 import time
 import random
@@ -47,7 +47,6 @@ def worker(bot):
     tags = get_tags(bot)
     followersToFollow = get_pages_follow_followers(bot)
     likersToFollow = get_pages_follow_likers(bot)
-
     
     
 
@@ -59,11 +58,15 @@ def worker(bot):
     instaPass = bot.password
     smartTags = tags
     print("MULTI - Started as",instaUser,"at",datetime.datetime.now().strftime("%H:%M:%S"))
-    session = InstaPy(username=instaUser, password=instaPass, headless_browser=True)
+    session = InstaPy(username=instaUser, password=instaPass, headless_browser=True) 
+    print(instaUser)
     session.login()
+
+    session.set_relationship_bounds(enabled=False)
 
     while 1:
         last = Reset.objects.filter(bot=bot.id).last()
+        
         bot_db = Bot.objects.get(id=bot.id)
         smartTags = tags
         
@@ -124,7 +127,6 @@ def worker(bot):
             likersToFollow = get_pages_follow_likers(bot)
             smartTags = tags
             # insta_bot.user_list = pages
-        time.sleep(66)
 
     session.end()
     print("MULTI -",instaUser,"finished run at",datetime.datetime.now().strftime("%H:%M:%S"))
@@ -146,11 +148,12 @@ if __name__ == '__main__':
             for b in bs_list:
                 if b.state == -1:
                     b.state = 1
-                    p = multiprocessing.Process(target=worker, args=(b,))
+                    p = threading.Thread(target=worker, args=(b,))
                     p.start()
-                    time.sleep(66)
+                    time.sleep(10)
                     bots_t.append({"id": b.id,  "process": p})
                     b.save()
+                    
 
 
 

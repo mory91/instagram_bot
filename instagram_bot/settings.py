@@ -25,7 +25,7 @@ SECRET_KEY = '-#-c=!_npn283yv!od^cobc*a=a7=d9a5+l%jztbko7h!l&l$7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', '178.162.203.14', 'localhost', '217.182.4.22']
+ALLOWED_HOSTS = ['0.0.0.0', '178.162.203.14', 'localhost', '217.182.4.22', '149.202.99.132']
 
 
 # Application definition
@@ -78,6 +78,7 @@ WSGI_APPLICATION = 'instagram_bot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
+        'CONN_MAX_AGE': 3600,
         'NAME': 'instagram_bot',
         'USER': 'morteza',
         'PASSWORD': 'morteza76',
