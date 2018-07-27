@@ -27,6 +27,7 @@ def get_tags(bot):
 
 def get_pages_follow_followers(bot):
     pages = []
+    # TODO: change buttom F to L
     pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='F'))
     pages_to_ret = []
     for p in pages_objs:
@@ -35,7 +36,7 @@ def get_pages_follow_followers(bot):
 
 def get_pages_follow_likers(bot):
     pages = []
-    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='L'))
+    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='F'))
     pages_to_ret = []
     for p in pages_objs:
         pages_to_ret.append(p.target)
@@ -96,6 +97,15 @@ def worker(bot):
         # session.unfollow_users(amount=random.randint(1, 5), sleep_delay=(random.randint(44,111)))
         # print("MULTI -",instaUser ,"finished unfollowing at",datetime.datetime.now().strftime("%H:%M:%S"))
         
+        if likersToFollow:
+            random_likers_to_follow = random.sample(likersToFollow, min(5, len(likersToFollow)))
+            session.set_user_interact(amount=2,
+				 percentage=70,
+                  randomize=True,
+                   media='Photo')
+            session.follow_likers (random_likers_to_follow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
+            print("MULTI -",instaUser,"finished following likers at",datetime.datetime.now().strftime("%H:%M:%S")) 
+
         # Followers of followers
         if followersToFollow:
             random_followers_to_follow = random.sample(followersToFollow, min(5, len(followersToFollow)))
@@ -106,15 +116,7 @@ def worker(bot):
             session.follow_user_followers(random_followers_to_follow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
             print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
 
-        if likersToFollow:
-            random_likers_to_follow = random.sample(likersToFollow, min(5, len(likersToFollow)))
-            session.set_user_interact(amount=2,
-				 percentage=70,
-                  randomize=True,
-                   media='Photo')
-            session.follow_likers (random_likers_to_follow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
-            print("MULTI -",instaUser,"finished following likers at",datetime.datetime.now().strftime("%H:%M:%S")) 
-
+        
         if smartTags:
             session.set_smart_hashtags(smartTags, limit=3, sort='top', log_tags=True)
             session.like_by_tags(amount=random.randint(2,5), use_smart_hashtags=True)

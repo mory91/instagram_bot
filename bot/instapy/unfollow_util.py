@@ -68,6 +68,7 @@ def set_automated_followed_pool(username, unfollow_after, logger, logfolder, poo
 def get_following_status(browser, person, logger):
 
     following = False
+    follow_button = None
     try:
         follow_button = browser.find_element_by_xpath(
             "//*[contains(text(), 'Follow')]")
@@ -87,7 +88,7 @@ def get_following_status(browser, person, logger):
             ' maybe no longer exists...'
                 .format(person.encode('utf-8')))
 
-    return following
+    return following, follow_button
 
 def unfollow(browser,
              username,
@@ -250,24 +251,8 @@ def unfollow(browser,
                     browser.get('https://www.instagram.com/' + person)
                     sleep(2)
 
-                    following = False
                     try:
-                        try:
-                            follow_button = browser.find_element_by_xpath(
-                                "//*[contains(text(), 'Follow')]")
-                        except NoSuchElementException:
-                            follow_button = browser.find_element_by_xpath(
-                                '''//*[@id="react-root"]/section/main/article/header/section/div[1]/span/span[1]/button''')
-                        if follow_button.text == 'Following':
-                            following = "Following"
-                        else:
-                            if follow_button.text in ['Follow', 'Follow Back']:
-                                following = False
-                            else:
-                                follow_button = browser.find_element_by_xpath(
-                                    "//*[contains(text(), 'Requested')]")
-                                if follow_button.text == "Requested":
-                                    following = "Requested"
+                        following, follow_button = get_following_status(browser, person, logger)
                     except:
                         logger.error(
                             '--> Unfollow error with {},'
@@ -317,7 +302,7 @@ def unfollow(browser,
                             break
                     else:
                         # this user found in our list of unfollow but is not followed
-                        if follow_button.text not in ['Follow', 'Follow Back']:
+                        if follow_button is None or follow_button.text not in ['Follow', 'Follow Back']:
                             log_uncertain_unfollowed_pool(username, person, logger, logfolder)
                         # check we are now logged in
                         valid_connection = browser.execute_script(
@@ -328,8 +313,7 @@ def unfollow(browser,
                             logger.warning(msg)
                             break
 
-                        delete_line_from_file('{0}{1}_followedPool.csv'.format(logfolder, username),
-                                              person + ",\n", logger)
+
                         # save any unfollowed person
                         log_record_all_unfollowed(username, person, logger, logfolder)
 
@@ -345,11 +329,14 @@ def unfollow(browser,
                         sleep(2)
                 else:
                     # if the user in dont include (should not be) we shall remove him from the follow list
-					# if he is a white list user (set at init and not during run time)
+                    # if he is a white list user (set at init and not during run time)
                     if person in white_list:
                         delete_line_from_file('{0}{1}_followedPool.csv'.format(logfolder, username),
                                               person + ",\n", logger)
-                    logger.info("Not unfollowing '{}'!  ~user is in the whitelist\n".format(person))
+                        list_type = 'whitelist'
+                    else:
+                        list_type = 'dont_include'
+                    logger.info("Not unfollowing '{}'!  ~user is in the list {}\n".format(person, list_type))
                     continue
 
         except BaseException as e:
@@ -373,8 +360,9 @@ def unfollow(browser,
         get_users_through_dialog(browser, None, username, amount,
                                      allfollowing, False, None,
                                       None, None, None,
-                                       False, "Unfollow", logger, logfolder)
-
+                                       {"enabled":False, "percentage":0},
+                                     "Unfollow", logger, logfolder)
+        
         # find dialog box
         dialog = browser.find_element_by_xpath(
             "//div[text()='Following']/following-sibling::div")
@@ -629,11 +617,11 @@ def get_users_through_dialog(browser,
         # get follow buttons. This approach will find the follow buttons and
         # ignore the Unfollow/Requested buttons.
         buttons = dialog.find_elements_by_xpath(
-            "//div/div/span/button[text()='Follow']")
+            "//button[text()='Follow']")
 
     elif channel == "Unfollow":
         buttons = dialog.find_elements_by_xpath(
-            "//div/div/span/button[text()='Following']")
+            "//button[text() = 'Following']")
 
     abort = False
     person_list = []
@@ -652,11 +640,11 @@ def get_users_through_dialog(browser,
 
         if channel == "Follow":
             buttons = dialog.find_elements_by_xpath(
-                "//div/div/span/button[text()='Follow']")
+                "//button[text()='Follow']")
 
         elif channel == "Unfollow":
             buttons = dialog.find_elements_by_xpath(
-                "//div/div/span/button[text()='Following']")
+                "//button[text() = 'Following']")
 
         total_list = len(buttons)
         abort = (before_scroll == total_list)
@@ -672,12 +660,13 @@ def get_users_through_dialog(browser,
                 sc_rolled = 0
 
         # Will follow a little bit of users in order to simulate real interaction
-        if (simulation == True and
-               (simulator_counter > random.randint(5, 17) or
-                    abort == True or
-                        total_list >= amount or
-                            sc_rolled == random.randint(3, 5)) and
-                                len(buttons) > 0):
+        if (simulation["enabled"] == True and
+                random.randint(0, 100) <= simulation["percentage"] and
+                   (simulator_counter > random.randint(5, 17) or
+                        abort == True or
+                            total_list >= amount or
+                                sc_rolled == random.randint(3, 5)) and
+                                    len(buttons) > 0):
 
             quick_amount = 1 if not total_list >= amount else random.randint(1, 4)
 

@@ -365,7 +365,7 @@ def delete_line_from_file(filepath, lineToDelete, logger):
             if not line.endswith(lineToDelete):
                 f.write(line)
             else:
-                logger.info("--> Removed '{}' from followedPool.csv file".format(line.split(',\n')[0]))
+                logger.info("\tRemoved '{}' from followedPool.csv file".format(line.split(',\n')[0]))
         f.close()
 
         # File leftovers that should not exist, but if so remove it
@@ -612,3 +612,8 @@ def highlight_print(username=None, message=None, priority=None, level=None, logg
     print("{}".format(lower_char*output_len))
 
 
+
+def remove_duplicated_from_list_keep_order(_list):
+    seen = set()
+    seen_add = seen.add
+    return [x for x in _list if not (x in seen or seen_add(x))]
