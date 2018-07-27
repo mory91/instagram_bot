@@ -36,7 +36,7 @@ def get_pages_follow_followers(bot):
 
 def get_pages_follow_likers(bot):
     pages = []
-    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='F'))
+    pages_objs = list(Target.objects.filter(target_type='P', bot=bot.id, target_follows='L'))
     pages_to_ret = []
     for p in pages_objs:
         pages_to_ret.append(p.target)
@@ -103,7 +103,8 @@ def worker(bot):
 				 percentage=70,
                   randomize=True,
                    media='Photo')
-            session.follow_likers (random_likers_to_follow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
+            # session.follow_likers (random_likers_to_follow, photos_grab_amount = 2, follow_likers_per_photo = 3, randomize=True, sleep_delay=600, interact=True)
+            session.follow_user_followers(random_likers_to_follow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
             print("MULTI -",instaUser,"finished following likers at",datetime.datetime.now().strftime("%H:%M:%S")) 
 
         # Followers of followers
@@ -116,6 +117,8 @@ def worker(bot):
             session.follow_user_followers(random_followers_to_follow, amount=random.randint(44,55), randomize=False, interact=True, sleep_delay=111)
             print("MULTI -",instaUser,"finished following followers at",datetime.datetime.now().strftime("%H:%M:%S")) 
 
+
+            
         
         if smartTags:
             session.set_smart_hashtags(smartTags, limit=3, sort='top', log_tags=True)
